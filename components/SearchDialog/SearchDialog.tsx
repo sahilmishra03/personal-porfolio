@@ -141,6 +141,21 @@ const CommandItem = React.forwardRef<
 ))
 CommandItem.displayName = CommandPrimitive.Item.displayName
 
+const CommandShortcut = React.forwardRef<
+  React.ElementRef<"span">,
+  React.ComponentPropsWithoutRef<"span">
+>(({ className, ...props }, ref) => (
+  <span
+    ref={ref}
+    className={cn(
+      "ml-auto text-xs tracking-widest text-muted-foreground",
+      className
+    )}
+    {...props}
+  />
+))
+CommandShortcut.displayName = "CommandShortcut"
+
 
 interface SearchDialogProps {
   isOpen: boolean;
@@ -179,7 +194,8 @@ const SearchDialog = ({ isOpen, setIsOpen }: SearchDialogProps) => {
   const handleSelect = (item: SearchItem) => {
     setIsOpen(false);
     if (item.href.startsWith('#')) {
-      window.location.hash = item.href.slice(1);
+      // Use router for hash navigation to avoid direct DOM manipulation
+      router.push(item.href);
     } else if (item.href.includes('/#')) {
       router.push(item.href);
     } else {
@@ -243,4 +259,5 @@ export {
   CommandItem,
   CommandList,
   CommandSeparator,
+  CommandShortcut,
 }

@@ -36,7 +36,7 @@ const ProjectCard = ({ project }: { project: ProjectType }) => {
   const router = useRouter();
   const { isDark } = useTheme();
 
-  const handleCardClick = (e: React.MouseEvent) => {
+  const handleCardClick = (e: React.MouseEvent | React.KeyboardEvent) => {
     // Prevent navigation if clicking on external links (the ProjectsButton component)
     if ((e.target as HTMLElement).closest('a') || (e.target as HTMLElement).closest('button')) {
       return;
@@ -72,7 +72,7 @@ const ProjectCard = ({ project }: { project: ProjectType }) => {
       onClick={handleCardClick}
       role="button"
       tabIndex={0}
-      onKeyDown={(e) => e.key === 'Enter' && handleCardClick(e as any)}
+      onKeyDown={(e) => e.key === 'Enter' && handleCardClick(e)}
       className="group flex h-full cursor-pointer flex-col overflow-hidden rounded-3xl border border-neutral-200 bg-neutral-50 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-neutral-300 hover:shadow-md dark:border-neutral-800 dark:bg-neutral-900/50 dark:hover:border-neutral-700 dark:hover:shadow-black/50"
     >
       {/* Image Container */}

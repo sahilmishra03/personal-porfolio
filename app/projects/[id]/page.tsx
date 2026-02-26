@@ -122,7 +122,7 @@ const StatCard = ({
   value,
   highlight = false,
 }: {
-  icon: any;
+  icon: React.ComponentType<{ className?: string }>;
   label: string;
   value: string;
   highlight?: boolean;
@@ -223,9 +223,9 @@ const ContributorProfileCard = ({
 };
 
 export default function ProjectDetailPageUI() {
-  const [project] = useState<any>(DUMMY_PROJECT);
-  const [approvedFeatures] = useState<any[]>(DUMMY_FEATURES);
-  const [approvedContributions] = useState<any[]>(DUMMY_CONTRIBUTIONS);
+  const [project] = useState(DUMMY_PROJECT);
+  const [approvedFeatures] = useState(DUMMY_FEATURES);
+  const [approvedContributions] = useState(DUMMY_CONTRIBUTIONS);
   const [showLoginPopup, setShowLoginPopup] = useState(false);
   const [showPreviewModal, setShowPreviewModal] = useState(false);
   const { isDark } = useTheme();

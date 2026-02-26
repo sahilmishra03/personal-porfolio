@@ -9,8 +9,6 @@
     "lint": "eslint",
     "format": "prettier --write  \"**/*.{ts,tsx,js,jsx,json,md,mdx,css}\"",
     "check": "prettier --check  \"**/*.{ts,tsx,js,jsx,json,md,mdx,css}\"",
-    "prepare": "husky",
-    "lint-staged": "lint-staged",
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
@@ -38,8 +36,6 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
-    "husky": "^9.1.7",
-    "lint-staged": "^16.2.7",
     "prettier": "^3.8.1",
     "prettier-plugin-import-sort": "^0.0.7",
     "prettier-plugin-tailwindcss": "^0.7.2",
