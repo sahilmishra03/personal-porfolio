@@ -5,6 +5,7 @@ import { Analytics } from "@vercel/analytics/next";
 
 import FooterBlur from "@/components/Footer/FooterBlur";
 import NavBar from "@/components/Navbar/NavBar";
+import PageTransition from "@/components/PageTransition/PageTransition";
 import { ThemeProvider } from "@/hooks/ThemeProvider";
 
 import "./globals.css";
@@ -83,7 +84,9 @@ export default function RootLayout({
       >
         <ThemeProvider>
           <NavBar />
-          {children}
+          <PageTransition>
+            {children}
+          </PageTransition>
           <FooterBlur />
         </ThemeProvider>
         <Analytics />
