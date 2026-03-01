@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 
+import Image from "next/image";
 import Link from "next/link";
 
 import { Github, Globe, Play, X } from "lucide-react";
@@ -183,9 +184,11 @@ export default function ProjectDetailPageUI({
           className={`relative w-full overflow-hidden rounded-2xl border shadow-xl ${isDark ? "border-zinc-800/80 bg-zinc-900/50" : "border-gray-200/60 bg-white"}`}
         >
           {project.imagePath || project.mockupImage ? (
-            <img
-              src={project.imagePath || project.mockupImage}
+            <Image
+              src={project.imagePath || project.mockupImage || ""}
               alt={`${project.title} mockup`}
+              width={1200}
+              height={800}
               // Removed object-cover and aspect-[16/9] to ensure the image scales naturally without cropping text
               className="block h-auto w-full"
               onError={(e) => {

@@ -39,7 +39,7 @@ export async function GET() {
 
   // ✅ Total solved
   const totalSolved = stats.submitStats.acSubmissionNum.find(
-    (d: any) => d.difficulty === "All"
+    (d: { difficulty: string; count: number }) => d.difficulty === "All"
   )?.count;
 
   // ✅ Badges count

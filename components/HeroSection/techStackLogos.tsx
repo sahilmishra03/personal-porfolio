@@ -1,9 +1,5 @@
 "use client";
 
-import Image from "next/image";
-
-import { useTheme } from "@/hooks/ThemeProvider";
-
 /**
  * Utility function to get dynamic tech stack icons from skillicons.dev.
  * You can import and use this anywhere in your Next.js project.

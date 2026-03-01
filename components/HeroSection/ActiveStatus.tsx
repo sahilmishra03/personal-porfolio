@@ -6,7 +6,7 @@ import axios from "axios";
 import { Clock, Code, Gamepad2, Music } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 
-import type { LanyardData, LanyardResponse } from "@/types/discord";
+import type { Activity, LanyardData, LanyardResponse } from "@/types/discord";
 import { CodeTime } from "@/types/wakatime";
 
 const DISCORD_ID = "889514676067635250";
@@ -31,7 +31,7 @@ const ActiveStatus = () => {
   const [codeTime, setCodeTime] = useState<CodeTime | null>(null);
 
   // Icon detection
-  const getActivityIcon = useCallback((activity: any) => {
+  const getActivityIcon = useCallback((activity: Activity) => {
     if (activity.name?.toLowerCase().includes("spotify")) return Music;
     if (
       activity.name?.toLowerCase().includes("visual studio code") ||
@@ -44,7 +44,7 @@ const ActiveStatus = () => {
 
   // Format activity
   const formatActivity = useCallback(
-    (activity: any, discordData: LanyardData | null) => {
+    (activity: Activity, discordData: LanyardData | null) => {
       if (
         activity.name?.toLowerCase().includes("spotify") &&
         discordData?.spotify

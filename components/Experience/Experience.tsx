@@ -1,4 +1,4 @@
-import { Briefcase, Calendar, ChevronRight } from "lucide-react";
+import "lucide-react";
 
 interface Experience {
   role: string;
@@ -7,8 +7,6 @@ interface Experience {
   highlights: string[];
   color: string;
 }
-
-const experiences: Experience[] = [];
 
 const Experience = () => {
   return null;

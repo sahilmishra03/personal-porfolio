@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <a href="https://portfolio-sahilmishra03.vercel.app/">Live Demo</a> •
+  <a href="https://sahilmishra.vercel.app/">Live Demo</a> •
   <a href="#features">Features</a> •
   <a href="#tech-stack">Tech Stack</a> •
   <a href="#getting-started">Getting Started</a> •
@@ -207,7 +207,7 @@ next_portfolio/
    GITHUB_PATH=your_github_personal_access_token
 
    # Site URL (for SEO)
-   NEXT_PUBLIC_SITE_URL=https://portfolio-sahilmishra03.vercel.app
+   NEXT_PUBLIC_SITE_URL=https://sahilmishra.vercel.app
    ```
 
 4. **Run the development server**
@@ -335,10 +335,10 @@ This portfolio can be deployed on any platform that supports Next.js:
 
 ## 📄 Environment Variables
 
-| Variable               | Required | Description                                                                 |
-| ---------------------- | -------- | --------------------------------------------------------------------------- |
-| `GITHUB_PATH`          | Yes      | GitHub Personal Access Token for GraphQL API                                |
-| `NEXT_PUBLIC_SITE_URL` | No       | Site URL for SEO (defaults to `https://portfolio-sahilmishra03.vercel.app`) |
+| Variable               | Required | Description                                                     |
+| ---------------------- | -------- | --------------------------------------------------------------- |
+| `GITHUB_PATH`          | Yes      | GitHub Personal Access Token for GraphQL API                    |
+| `NEXT_PUBLIC_SITE_URL` | No       | Site URL for SEO (defaults to `https://sahilmishra.vercel.app`) |
 
 ---
 
@@ -364,7 +364,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 **Sahil Mishra** - Full Stack Developer
 
-- 🌐 Website: [portfolio-sahilmishra03.vercel.app](https://portfolio-sahilmishra03.vercel.app/)
+- 🌐 Website: [sahilmishra.vercel.app](https://sahilmishra.vercel.app/)
 - 📧 Email: [sahilmishra03032005@gmail.com](mailto:sahilmishra03032005@gmail.com)
 - 💼 LinkedIn: [Sahil Mishra](https://www.linkedin.com/in/sahilmishra03/)
 - 🐦 Twitter/X: [@SahilMi86109458](https://x.com/SahilMi86109458)

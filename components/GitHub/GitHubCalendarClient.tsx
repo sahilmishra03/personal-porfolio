@@ -36,11 +36,7 @@ const GitHubCalendar = dynamic<GitHubCalendarProps>(
   }
 );
 
-interface GitHubCalendarClientProps {
-  username: string;
-}
-
-const GitHubCalendarClient = ({ username }: GitHubCalendarClientProps) => {
+const GitHubCalendarClient = () => {
   const { isDark } = useTheme();
 
   return (

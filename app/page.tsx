@@ -13,7 +13,8 @@ import ProblemSolving from "@/components/ProblemSolving/ProblemSolving";
 import Projects from "@/components/Projects/Projects";
 import FadeIn from "@/components/ui/FadeIn";
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://yourdomain.com";
+const baseUrl =
+  process.env.NEXT_PUBLIC_SITE_URL || "https://sahilmishra.vercel.app";
 
 export const metadata: Metadata = {
   title: "Sahil Mishra | Full Stack App Developer",

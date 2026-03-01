@@ -1,4 +1,4 @@
-import { Code, Cpu, Layers, MapPin } from "lucide-react";
+import { Cpu, Layers, MapPin } from "lucide-react";
 
 import projectsData from "../../data/projects.json";
 import { techStack } from "../../data/techStack";

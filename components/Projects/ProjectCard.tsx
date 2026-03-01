@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useState } from "react";
 
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -43,13 +43,7 @@ const getTechIcon = (tech: string) => {
   return iconMap[tech] || null;
 };
 
-const ProjectCard = ({
-  project,
-  projectIndex = 0,
-}: {
-  project: ProjectType;
-  projectIndex?: number;
-}) => {
+const ProjectCard = ({ project }: { project: ProjectType }) => {
   const {
     title,
     name,
@@ -67,7 +61,6 @@ const ProjectCard = ({
   const router = useRouter();
   const { isDark } = useTheme();
   const [imageLoaded, setImageLoaded] = useState(false);
-  const timestamp = useMemo(() => Date.now(), []);
 
   const projectName = (title || name || "Untitled Project")
     .split("–")[0]
@@ -164,16 +157,18 @@ const ProjectCard = ({
         )}
 
         {/* Use project's imagePath if available, otherwise fall back to sequence */}
-        <img
+        <Image
           key={finalImagePath}
-          src={`${finalImagePath}?t=${timestamp}`}
+          src={finalImagePath}
           alt={`Screenshot of ${projectName}`}
+          fill
           loading="lazy"
           // Added absolute inset-0 to fill the aspect container perfectly
-          className={`absolute inset-0 z-10 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 ${
+          className={`z-10 object-cover transition-transform duration-700 ease-out group-hover:scale-105 ${
             imageLoaded ? "opacity-100" : "opacity-0"
           }`}
           onLoad={() => setImageLoaded(true)}
+          unoptimized
         />
       </div>
 
