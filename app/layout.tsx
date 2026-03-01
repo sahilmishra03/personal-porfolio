@@ -44,9 +44,6 @@ export const metadata: Metadata = {
   },
 };
 
-// Script to prevent flash of incorrect theme and fix hydration
-const themeInitScript = `(function(){try{var theme=localStorage.getItem('theme');if(!theme){var prefersDark=window.matchMedia('(prefers-color-scheme: dark)').matches;theme=prefersDark?'dark':'light';localStorage.setItem('theme',theme)}if(theme==='light'){document.documentElement.classList.remove('dark')}else{document.documentElement.classList.add('dark')}document.documentElement.setAttribute('data-theme',theme)}catch(e){}})();`;
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -55,7 +52,6 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <head>
-        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         <link rel="preload" href="/x.webp" as="image" type="image/webp" />
         <link
           rel="preload"

@@ -39,7 +39,7 @@ const getGitHubContributions = async (): Promise<{
           }
         }`,
       }),
-      next: { revalidate: 3600 },
+      next: { revalidate: 300 },
     });
 
     if (!res.ok) {
@@ -156,19 +156,31 @@ const GitHub = async () => {
   const currentYear = new Date().getFullYear();
   const lastYear = currentYear - 1;
 
-  // Fallback data if API fails - use real values from GitHub API
-  const totalDisplay = contributions.total
-    ? contributions.total.toLocaleString()
-    : "413";
-  const thisYearDisplay = contributions.thisYear
-    ? contributions.thisYear.toLocaleString()
-    : "164";
-  const lastYearDisplay = contributions.lastYear
-    ? contributions.lastYear.toLocaleString()
-    : "249";
+  // Always use real-time data - no hardcoded fallbacks
+  if (!contributions.total || contributions.thisYear === null || contributions.lastYear === null) {
+    return (
+      <section id="github" className="mx-auto mt-12 max-w-3xl px-0 sm:mt-16">
+        <div className="mb-8">
+          <h2 className="text-sm font-bold tracking-wider text-neutral-500 uppercase dark:text-neutral-400">
+            Open Source
+          </h2>
+          <p className="mt-1 text-3xl font-bold tracking-tight text-neutral-900 sm:text-4xl dark:text-white">
+            GitHub Activity
+          </p>
+        </div>
+        <div className="rounded-2xl border border-red-200 bg-red-50 p-6 text-center dark:border-red-800 dark:bg-red-950/50">
+          <p className="text-red-600 dark:text-red-400">
+            Unable to fetch GitHub contributions. Please check your connection and try again later.
+          </p>
+        </div>
+      </section>
+    );
+  }
 
-  const growthValue =
-    contributions.growth !== null ? contributions.growth : -34.1;
+  const totalDisplay = contributions.total.toLocaleString();
+  const thisYearDisplay = contributions.thisYear.toLocaleString();
+  const lastYearDisplay = contributions.lastYear.toLocaleString();
+  const growthValue = contributions.growth || 0;
   const growthString = `${growthValue >= 0 ? "+" : ""}${growthValue.toFixed(1)}%`;
   const growthColor = growthValue >= 0 ? "text-emerald-500" : "text-red-500";
 
