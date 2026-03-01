@@ -183,7 +183,7 @@ const ProjectCard = ({ project }: { project: ProjectType }) => {
         </div>
 
         {/* MOBILE FIX: Slightly smaller text on mobile to fit content better */}
-        <p className="mb-6 line-clamp-3 text-sm sm:text-base text-neutral-600 dark:text-neutral-400">
+        <p className="mb-6 line-clamp-3 text-sm text-neutral-600 sm:text-base dark:text-neutral-400">
           {projectDescription}
         </p>
 
@@ -205,7 +205,7 @@ const ProjectCard = ({ project }: { project: ProjectType }) => {
                     width={24}
                     height={24}
                     loading="lazy"
-                    className="h-5 w-5 sm:h-6 sm:w-6 object-contain"
+                    className="h-5 w-5 object-contain sm:h-6 sm:w-6"
                     unoptimized
                   />
                 </span>
@@ -222,7 +222,7 @@ const ProjectCard = ({ project }: { project: ProjectType }) => {
                 className={`relative inline-flex h-2 w-2 shrink-0 rounded-full ${statusColor.dot}`}
               ></span>
               {/* MOBILE FIX: whitespace-nowrap prevents the text from wrapping onto two lines */}
-              <span className="whitespace-nowrap text-xs sm:text-[13px] font-medium tracking-tight">
+              <span className="text-xs font-medium tracking-tight whitespace-nowrap sm:text-[13px]">
                 {currentStatus}
               </span>
             </div>
