@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 
 import Image from "next/image";
 
-import { ArrowUpRight, Trophy } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 const ProblemSolving = () => {
   const [stats, setStats] = useState({
@@ -92,7 +92,6 @@ const ProblemSolving = () => {
                 <h3 className="font-bold text-neutral-900 dark:text-white">
                   LeetCode Profile
                 </h3>
-                <Trophy size={14} className="text-amber-500" />
               </div>
               <a
                 href="https://leetcode.com/u/sahilmishra03/"

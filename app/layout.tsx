@@ -17,7 +17,16 @@ export const metadata: Metadata = {
   description:
     "Full Stack App Developer building scalable, AI-powered applications using Flutter, Firebase, FastAPI, and PostgreSQL with strong foundation in Data Structures & Algorithms.",
   icons: {
-    icon: "/cropped_circle_image.png",
+    icon: [
+      { url: "/cropped_circle_image.png", sizes: "32x32", type: "image/png" },
+      { url: "/cropped_circle_image.png", sizes: "16x16", type: "image/png" },
+      { url: "/cropped_circle_image.png", sizes: "192x192", type: "image/png" },
+      { url: "/cropped_circle_image.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [
+      { url: "/cropped_circle_image.png", sizes: "180x180", type: "image/png" },
+    ],
+    shortcut: "/cropped_circle_image.png",
   },
   openGraph: {
     images: [
