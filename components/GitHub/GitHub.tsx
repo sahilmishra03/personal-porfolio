@@ -157,7 +157,11 @@ const GitHub = async () => {
   const lastYear = currentYear - 1;
 
   // Always use real-time data - no hardcoded fallbacks
-  if (!contributions.total || contributions.thisYear === null || contributions.lastYear === null) {
+  if (
+    !contributions.total ||
+    contributions.thisYear === null ||
+    contributions.lastYear === null
+  ) {
     return (
       <section id="github" className="mx-auto mt-12 max-w-3xl px-0 sm:mt-16">
         <div className="mb-8">
@@ -170,7 +174,8 @@ const GitHub = async () => {
         </div>
         <div className="rounded-2xl border border-red-200 bg-red-50 p-6 text-center dark:border-red-800 dark:bg-red-950/50">
           <p className="text-red-600 dark:text-red-400">
-            Unable to fetch GitHub contributions. Please check your connection and try again later.
+            Unable to fetch GitHub contributions. Please check your connection
+            and try again later.
           </p>
         </div>
       </section>
