@@ -42,7 +42,7 @@ const ProjectsGrid = ({ projects, initialCount = 4 }: ProjectsGridProps) => {
               }}
               className="h-full"
             >
-              <ProjectCard project={project} projectIndex={index} />
+              <ProjectCard project={project} />
             </motion.div>
           ))}
         </AnimatePresence>

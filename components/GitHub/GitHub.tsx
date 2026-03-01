@@ -226,7 +226,7 @@ const GitHub = async () => {
 
         {/* GitHub Calendar Component Wrapper */}
         <div className="overflow-hidden rounded-xl border border-neutral-200 bg-white p-4 dark:border-neutral-800/60 dark:bg-neutral-950/50">
-          <GitHubCalendarClient username="sahilmishra03" />
+          <GitHubCalendarClient />
         </div>
       </div>
     </section>
