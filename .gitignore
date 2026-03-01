@@ -40,3 +40,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 CLAUDE.md
+
+# firebase config (template - actual config should be .env.local)
+# lib/firebase.ts

@@ -1,42 +1,18 @@
 "use client";
 
 import Image from "next/image";
-import { useTheme } from "@/hooks/ThemeProvider";
-import { getTechLogoUrl } from "./techStackLogos";
 
-export const techStack = [
-  { name: "Android Studio", iconId: "androidstudio", desc: "IDE" },
-  { name: "Discord", iconId: "discord", desc: "Communication" },
-  { name: "Docker", iconId: "docker", desc: "Containerization" },
-  { name: "FastAPI", iconId: "fastapi", desc: "Backend Framework" },
-  { name: "Figma", iconId: "figma", desc: "Design" },
-  { name: "Firebase", iconId: "firebase", desc: "BaaS" },
-  { name: "Flutter", iconId: "flutter", desc: "Mobile Framework" },
-  { name: "Git", iconId: "git", desc: "Version Control" },
-  { name: "GitHub", iconId: "github", desc: "Git Hosting" },
-  { name: "Gmail", iconId: "gmail", desc: "Email" },
-  { name: "JavaScript", iconId: "js", desc: "Language" },
-  { name: "Dart", iconId: "dart", desc: "Language" },
-  { name: "CSS", iconId: "css", desc: "Styling" },
-  { name: "Postman", iconId: "postman", desc: "API Testing" },
-  { name: "PostgreSQL", iconId: "postgres", desc: "Database" },
-  { name: "Python", iconId: "py", desc: "Language" },
-  { name: "TypeScript", iconId: "ts", desc: "Language" },
-  { name: "Ubuntu", iconId: "ubuntu", desc: "OS" },
-  { name: "VS Code", iconId: "vscode", desc: "IDE" },
-  { name: "Vercel", iconId: "vercel", desc: "Deployment" },
-  { name: "Next.js", iconId: "nextjs", desc: "Framework" },
-  { name: "Notion", iconId: "notion", desc: "Productivity" },
-  { name: "npm", iconId: "npm", desc: "Package Manager" },
-  { name: "Java", iconId: "java", desc: "Language" },
-];
+import { useTheme } from "@/hooks/ThemeProvider";
+
+import { techStack } from "../../data/techStack";
+import { getTechLogoUrl } from "./techStackLogos";
 
 const TechStack = () => {
   const { isDark } = useTheme();
 
   // Get icon URL using centralized system with theme support
   const getIconUrl = (tech: { name: string; iconId: string }) => {
-    const theme = isDark ? 'dark' : 'light';
+    const theme = isDark ? "dark" : "light";
     return getTechLogoUrl(tech.iconId, theme);
   };
 
@@ -49,14 +25,17 @@ const TechStack = () => {
           Tech Stack & Tools
         </h2>
       </div>
-      
+
       {/* FIXED ALIGNMENT HERE: 
         Removed 'justify-evenly', increased gap slightly to 'gap-6 sm:gap-8' 
         so the grid looks breathable and aligned to the left. 
       */}
-      <div className="flex w-full flex-wrap gap-6 sm:gap-8 pt-2">
+      <div className="flex w-full flex-wrap gap-6 pt-2 sm:gap-8">
         {techStack.map((tech) => (
-          <div key={tech.name} className="group relative flex h-14 w-14 items-center justify-center transition-transform hover:scale-110">
+          <div
+            key={tech.name}
+            className="group relative flex h-14 w-14 items-center justify-center transition-transform hover:scale-110"
+          >
             {/* Clean, borderless, transparent icon */}
             <Image
               src={getIconUrl(tech)}

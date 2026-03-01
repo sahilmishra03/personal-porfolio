@@ -11,25 +11,25 @@ import GrowthTimeline from "@/components/GrowthTimeline/GrowthTimeline";
 import Hero from "@/components/HeroSection/Hero";
 import ProblemSolving from "@/components/ProblemSolving/ProblemSolving";
 import Projects from "@/components/Projects/Projects";
-import Resources from "@/components/Resources/Resources";
 import FadeIn from "@/components/ui/FadeIn";
 
-const baseUrl =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://yourdomain.com";
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://yourdomain.com";
 
 export const metadata: Metadata = {
-  title: "Sahil Mishra | Full Stack & Flutter Developer",
+  title: "Sahil Mishra | Full Stack App Developer",
   description:
-    "Sahil Mishra is a Full Stack Developer specializing in Flutter, Firebase, Node.js & AI-powered applications. Passionate about building scalable, real-world apps with clean architecture and strong problem-solving skills.",
+    "Sahil Mishra is a Full Stack App Developer building scalable, AI-powered applications using Flutter, Firebase, FastAPI, and PostgreSQL. With a strong foundation in Data Structures & Algorithms, I focus on building efficient, real-world solutions with clean architecture and strong backend systems.",
   keywords: [
     "Sahil Mishra",
-    "Full Stack Developer",
+    "Full Stack App Developer",
     "Flutter Developer",
     "Firebase",
-    "Node.js",
-    "MongoDB",
+    "FastAPI",
+    "PostgreSQL",
     "AI Integration",
-    "DSA",
+    "Data Structures & Algorithms",
+    "Clean Architecture",
+    "Backend Systems",
     "Portfolio",
   ],
   authors: [{ name: "Sahil Mishra" }],
@@ -42,9 +42,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: baseUrl,
-    title: "Sahil Mishra | Full Stack & Flutter Developer",
+    title: "Sahil Mishra | Full Stack App Developer",
     description:
-      "Full Stack & Flutter Developer building scalable apps with Firebase, Node.js & AI integration. Strong foundation in Data Structures & Algorithms.",
+      "Full Stack App Developer building scalable, AI-powered applications using Flutter, Firebase, FastAPI, and PostgreSQL. Strong foundation in Data Structures & Algorithms with focus on clean architecture.",
     siteName: "Sahil Mishra Portfolio",
     images: [
       {
@@ -57,9 +57,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sahil Mishra | Full Stack & Flutter Developer",
+    title: "Sahil Mishra | Full Stack App Developer",
     description:
-      "Full Stack Developer specializing in Flutter, Firebase, Node.js & AI integration.",
+      "Full Stack App Developer building scalable, AI-powered applications using Flutter, Firebase, FastAPI, and PostgreSQL.",
     images: ["/og_image.png"],
   },
   robots: {
@@ -121,11 +121,6 @@ const page = () => {
       {/* Achievements */}
       <FadeIn>
         <Achievments />
-      </FadeIn>
-
-      {/* Resources I Use */}
-      <FadeIn>
-        <Resources />
       </FadeIn>
 
       {/* Footer */}

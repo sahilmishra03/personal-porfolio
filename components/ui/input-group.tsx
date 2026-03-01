@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import * as React from "react"
+import * as React from "react";
 
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
 
 const InputGroup = React.forwardRef<
   HTMLDivElement,
@@ -11,30 +11,30 @@ const InputGroup = React.forwardRef<
   <div
     ref={ref}
     className={cn(
-      "flex h-10 w-full items-center gap-1 rounded-md border border-input bg-background text-sm ring-offset-background",
+      "border-input bg-background ring-offset-background flex h-10 w-full items-center gap-1 rounded-md border text-sm",
       className
     )}
     {...props}
   />
-))
-InputGroup.displayName = "InputGroup"
+));
+InputGroup.displayName = "InputGroup";
 
 const InputGroupAddon = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement> & {
-    position?: "left" | "right"
+    position?: "left" | "right";
   }
 >(({ className, position = "left", ...props }, ref) => (
   <div
     ref={ref}
     className={cn(
-      "flex items-center px-3 text-muted-foreground",
+      "text-muted-foreground flex items-center px-3",
       position === "right" && "ml-auto",
       className
     )}
     {...props}
   />
-))
-InputGroupAddon.displayName = "InputGroupAddon"
+));
+InputGroupAddon.displayName = "InputGroupAddon";
 
-export { InputGroup, InputGroupAddon }
+export { InputGroup, InputGroupAddon };

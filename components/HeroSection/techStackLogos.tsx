@@ -19,9 +19,9 @@ export const techStack = [
   { name: "Dart", iconId: "dart", desc: "Language" },
   { name: "Discord", iconId: "discord", desc: "Communication" },
   { name: "Docker", iconId: "docker", desc: "Containerization" },
-  { name: "FastAPI", iconId: "fastapi", desc: "Backend Framework" },
-  { name: "Figma", iconId: "figma", desc: "Design" },
   { name: "Firebase", iconId: "firebase", desc: "BaaS" },
+  { name: "FastAPI", iconId: "fastapi", desc: "Framework" },
+  { name: "Figma", iconId: "figma", desc: "Design" },
   { name: "Flutter", iconId: "flutter", desc: "Mobile Framework" },
   { name: "Git", iconId: "git", desc: "Version Control" },
   { name: "GitHub", iconId: "github", desc: "Git Hosting" },
@@ -41,6 +41,7 @@ export const techStack = [
   { name: "npm", iconId: "npm", desc: "Package Manager" },
   { name: "Obsidian", iconId: "obsidian", desc: "Note-taking" },
   { name: "Python", iconId: "py", desc: "Language" },
+  { name: "PostgreSQL", iconId: "postgresql", desc: "Database" },
   { name: "PyCharm", iconId: "pycharm", desc: "IDE" },
   { name: "React", iconId: "react", desc: "Library" },
   { name: "Replit", iconId: "replit", desc: "Cloud IDE" },
@@ -50,7 +51,7 @@ export const techStack = [
   { name: "Twitter/X", iconId: "twitter", desc: "Social Media" },
   { name: "Ubuntu", iconId: "ubuntu", desc: "OS" },
   { name: "Vercel", iconId: "vercel", desc: "Deployment" },
-  { name: "VS Code", iconId: "vscode", desc: "IDE" }
+  { name: "VS Code", iconId: "vscode", desc: "IDE" },
 ];
 export const getTechLogoUrl = (
   iconId: string,

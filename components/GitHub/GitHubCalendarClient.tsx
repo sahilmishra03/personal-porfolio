@@ -1,6 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
+
 import { useTheme } from "@/hooks/ThemeProvider";
 
 // Type definitions for GitHubCalendar props
@@ -26,7 +27,9 @@ const GitHubCalendar = dynamic<GitHubCalendarProps>(
       <div className="flex h-[150px] w-full items-center justify-center rounded-xl bg-neutral-50/50 dark:bg-neutral-900/50">
         <div className="flex flex-col items-center gap-3">
           <div className="h-6 w-6 animate-spin rounded-full border-2 border-neutral-300 border-t-emerald-500"></div>
-          <span className="text-xs font-medium text-neutral-500">Loading activity...</span>
+          <span className="text-xs font-medium text-neutral-500">
+            Loading activity...
+          </span>
         </div>
       </div>
     ),

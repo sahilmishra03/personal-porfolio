@@ -20,9 +20,13 @@ let themeListeners: Array<() => void> = [];
 
 const themeStore = {
   getSnapshot: (): boolean => {
-    const savedTheme = localStorage.getItem("theme");
-    // Default to dark theme if no preference is saved
-    return savedTheme !== "light";
+    if (typeof window === "undefined") return true; // SSR fallback
+    try {
+      const savedTheme = localStorage.getItem("theme");
+      return savedTheme !== "light";
+    } catch {
+      return true; // Default to dark if localStorage fails
+    }
   },
   getServerSnapshot: (): boolean => {
     // Return consistent value for SSR - default to dark
@@ -45,6 +49,18 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
     themeStore.getSnapshot,
     themeStore.getServerSnapshot
   );
+
+  // Handle initial theme sync after mount to prevent hydration issues
+  useEffect(() => {
+    const isDarkMode = document.documentElement.classList.contains("dark");
+    if (isDarkMode !== isDark) {
+      if (isDark) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    }
+  }, [isDark]);
 
   // Sync dark class with DOM when isDark changes
   useEffect(() => {

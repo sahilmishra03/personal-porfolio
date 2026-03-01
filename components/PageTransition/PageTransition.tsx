@@ -1,6 +1,7 @@
 "use client";
 
 import { useNavigationTransition } from "@/hooks/useNavigationTransition";
+
 import LoadingSpinner from "./LoadingSpinner";
 
 interface PageTransitionProps {
@@ -16,8 +17,8 @@ export default function PageTransition({ children }: PageTransitionProps) {
       <div
         className={`transition-all duration-300 ease-in-out ${
           isNavigating
-            ? "opacity-0 transform -translate-y-2"
-            : "opacity-100 transform translate-y-0"
+            ? "-translate-y-2 transform opacity-0"
+            : "translate-y-0 transform opacity-100"
         }`}
       >
         {children}

@@ -1,7 +1,9 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+
 import { Search } from "lucide-react";
+
 import SearchDialog from "./SearchDialog";
 
 export default function SearchTrigger() {
@@ -22,10 +24,10 @@ export default function SearchTrigger() {
     <>
       <button
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-6 right-6 z-40 flex items-center gap-2 rounded-full border bg-background px-4 py-3 text-sm text-foreground shadow-lg transition-transform hover:scale-105"
+        className="bg-background text-foreground fixed right-6 bottom-6 z-40 flex items-center gap-2 rounded-full border px-4 py-3 text-sm shadow-lg transition-transform hover:scale-105"
       >
         <Search className="h-4 w-4" />
-        <span className="hidden sm:inline font-medium">Search</span>
+        <span className="hidden font-medium sm:inline">Search</span>
       </button>
 
       <SearchDialog isOpen={isOpen} setIsOpen={setIsOpen} />

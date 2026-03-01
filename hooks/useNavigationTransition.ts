@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+
 import { usePathname } from "next/navigation";
 
 export function useNavigationTransition() {
@@ -8,10 +9,12 @@ export function useNavigationTransition() {
   const pathname = usePathname();
 
   useEffect(() => {
-    setIsNavigating(true);
     const timer = setTimeout(() => {
-      setIsNavigating(false);
-    }, 300);
+      setIsNavigating(true);
+      setTimeout(() => {
+        setIsNavigating(false);
+      }, 300);
+    }, 0);
 
     return () => clearTimeout(timer);
   }, [pathname]);

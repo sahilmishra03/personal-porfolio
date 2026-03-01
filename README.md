@@ -1,15 +1,9 @@
 <p align="center">
-  <img src="public/Logo.webp" alt="Portfolio Logo" width="80" height="80" />
-</p>
-
-<h1 align="center">John Doe - Developer Portfolio</h1>
-
-<p align="center">
   <strong>A modern, responsive portfolio built with Next.js 16, React 19, and TailwindCSS 4</strong>
 </p>
 
 <p align="center">
-  <a href="https://example.com">Live Demo</a> •
+  <a href="https://portfolio-sahilmishra03.vercel.app/">Live Demo</a> •
   <a href="#features">Features</a> •
   <a href="#tech-stack">Tech Stack</a> •
   <a href="#getting-started">Getting Started</a> •
@@ -36,21 +30,12 @@
 
 ### 👤 **Hero Section**
 
-- **Profile Avatar** - Animated profile image with theme-aware accent colors
 - **Personal Stats** - Display years of experience, projects completed, and other metrics
-- **Social Links** - Easy access to Twitter/X, LinkedIn, GitHub, Instagram, Pinterest, and Email
-- **Live Spotify Activity** - Real-time display of currently playing or last played song via Spotify API integration
+- **Social Links** - Easy access to Twitter/X, LinkedIn, GitHub, and Email
 - **Tech Stack Display** - Interactive tech icons with tooltips showing expertise
-
-### 💼 **Experience Section**
-
-- **Career Timeline** - Professional experience with role highlights
-- **Interactive Cards** - Hover effects and smooth transitions
-- **Accomplishment Highlights** - Key achievements with chevron animations
 
 ### 🚀 **Projects Showcase**
 
-- **Featured Projects Grid** - Display of 7 production-ready projects
 - **Project Cards** - Each card includes:
   - Project name and tagline
   - Description and tech stack
@@ -94,37 +79,35 @@
 
 ### **Styling**
 
-| Technology                                                     | Purpose             |
-| -------------------------------------------------------------- | ------------------- |
-| [TailwindCSS](https://tailwindcss.com/) v4                     | Utility-first CSS   |
-| [tw-animate-css](https://www.npmjs.com/package/tw-animate-css) | CSS Animations      |
-| [class-variance-authority](https://cva.style/docs)             | Component Variants  |
-| [clsx](https://www.npmjs.com/package/clsx)                     | Conditional Classes |
-| [tailwind-merge](https://www.npmjs.com/package/tailwind-merge) | Class Merging       |
+| Technology                                                     | Version | Purpose             |
+| -------------------------------------------------------------- | ------- | ------------------- |
+| [TailwindCSS](https://tailwindcss.com/) v4                     | 4.2.1   | Utility-first CSS   |
+| [class-variance-authority](https://cva.style/docs)             | -       | Component Variants  |
+| [clsx](https://www.npmjs.com/package/clsx)                     | 2.1.1   | Conditional Classes |
+| [tailwind-merge](https://www.npmjs.com/package/tailwind-merge) | 3.4.0   | Class Merging       |
 
 ### **UI Components**
 
-| Technology                            | Purpose                |
-| ------------------------------------- | ---------------------- |
-| [Radix UI](https://www.radix-ui.com/) | Headless UI Primitives |
-| [Lucide React](https://lucide.dev/)   | Icon Library           |
-| [Motion](https://motion.dev/)         | Animations             |
+| Technology                            | Version | Purpose                |
+| ------------------------------------- | ------- | ---------------------- |
+| [Radix UI](https://www.radix-ui.com/) | -       | Headless UI Primitives |
+| [Lucide React](https://lucide.dev/)   | 0.563.0 | Icon Library           |
+| [Motion](https://motion.dev/)         | 12.30.0 | Animations             |
 
 ### **Data & API**
 
-| Technology                                                                   | Purpose              |
-| ---------------------------------------------------------------------------- | -------------------- |
-| [Axios](https://axios-http.com/)                                             | HTTP Client          |
-| [react-github-calendar](https://www.npmjs.com/package/react-github-calendar) | GitHub Contributions |
+| Technology                                                                   | Version | Purpose              |
+| ---------------------------------------------------------------------------- | ------- | -------------------- |
+| [Axios](https://axios-http.com/)                                             | 1.13.4  | HTTP Client          |
+| [react-github-calendar](https://www.npmjs.com/package/react-github-calendar) | 5.0.5   | GitHub Contributions |
 
 ### **Development Tools**
 
-| Technology                                           | Purpose              |
-| ---------------------------------------------------- | -------------------- |
-| [ESLint](https://eslint.org/)                        | Code Linting         |
-| [Prettier](https://prettier.io/)                     | Code Formatting      |
-| [Husky](https://typicode.github.io/husky/)           | Git Hooks            |
-| [lint-staged](https://github.com/okonet/lint-staged) | Staged Files Linting |
+| Technology                                           | Version | Purpose              |
+| ---------------------------------------------------- | ------- | -------------------- |
+| [ESLint](https://eslint.org/)                        | 9.x     | Code Linting         |
+| [Prettier](https://prettier.io/)                     | 3.8.1   | Code Formatting      |
+| [lint-staged](https://github.com/okonet/lint-staged) | -       | Staged Files Linting |
 
 ---
 
@@ -171,7 +154,6 @@ next_portfolio/
 │   └── utils.ts                  # Utility functions (cn helper)
 │
 ├── public/                       # Static assets
-│   ├── Logo.webp                 # Site logo
 │   ├── HankenGrotesk-Variable.ttf  # Custom font
 │   └── [project_images].webp     # Project screenshots
 │
@@ -200,9 +182,11 @@ next_portfolio/
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/example/next_portfolio.git
-   cd next_portfolio
+   git clone https://github.com/sahilmishra03/personal-porfolio.git
+   cd personal-porfolio
    ```
+
+````
 
 2. **Install dependencies**
 
@@ -212,7 +196,7 @@ next_portfolio/
    yarn install
    # or
    pnpm install
-   ```
+````
 
 3. **Set up environment variables**
 
@@ -223,7 +207,7 @@ next_portfolio/
    GITHUB_PATH=your_github_personal_access_token
 
    # Site URL (for SEO)
-   NEXT_PUBLIC_SITE_URL=https://your-domain.com
+   NEXT_PUBLIC_SITE_URL=https://portfolio-sahilmishra03.vercel.app
    ```
 
 4. **Run the development server**
@@ -285,7 +269,7 @@ Theme-aware variables are defined in `globals.css`:
 
 ### Adding Projects
 
-Edit `components/Projects/Projects.tsx`:
+Edit `data/projects.json`:
 
 ```typescript
 const projects: ProjectType[] = [
@@ -306,7 +290,7 @@ const projects: ProjectType[] = [
 
 ### Updating Tech Stack
 
-Edit `components/HeroSection/TechStack.tsx`:
+Edit `data/techStack.ts`:
 
 ```typescript
 export const techStack = [
@@ -336,7 +320,7 @@ The easiest way to deploy is using [Vercel](https://vercel.com):
 3. Add environment variables
 4. Deploy!
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/example/next_portfolio)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/sahilmishra03/personal-porfolio)
 
 ### Other Platforms
 
@@ -351,10 +335,10 @@ This portfolio can be deployed on any platform that supports Next.js:
 
 ## 📄 Environment Variables
 
-| Variable               | Required | Description                                             |
-| ---------------------- | -------- | ------------------------------------------------------- |
-| `GITHUB_PATH`          | Yes      | GitHub Personal Access Token for GraphQL API            |
-| `NEXT_PUBLIC_SITE_URL` | No       | Site URL for SEO (defaults to `https://example.com`) |
+| Variable               | Required | Description                                                                 |
+| ---------------------- | -------- | --------------------------------------------------------------------------- |
+| `GITHUB_PATH`          | Yes      | GitHub Personal Access Token for GraphQL API                                |
+| `NEXT_PUBLIC_SITE_URL` | No       | Site URL for SEO (defaults to `https://portfolio-sahilmishra03.vercel.app`) |
 
 ---
 
@@ -378,16 +362,16 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## 📬 Contact
 
-**John Doe** - Full Stack Developer
+**Sahil Mishra** - Full Stack Developer
 
-- 🌐 Website: [example.com](https://example.com)
-- 📧 Email: [john.doe@example.com](mailto:john.doe@example.com)
-- 💼 LinkedIn: [John Doe](https://www.linkedin.com/in/example/)
-- 🐦 Twitter/X: [@johndoe](https://x.com/johndoe)
-- 🐙 GitHub: [@example](https://github.com/example)
+- 🌐 Website: [portfolio-sahilmishra03.vercel.app](https://portfolio-sahilmishra03.vercel.app/)
+- 📧 Email: [sahilmishra03032005@gmail.com](mailto:sahilmishra03032005@gmail.com)
+- 💼 LinkedIn: [Sahil Mishra](https://www.linkedin.com/in/sahilmishra03/)
+- 🐦 Twitter/X: [@SahilMi86109458](https://x.com/SahilMi86109458)
+- 🐙 GitHub: [@sahilmishra03](https://github.com/sahilmishra03)
 
 ---
 
   <p align="center">
-  Made with ❤️ by <a href="https://github.com/example">John Doe</a>
+  Made with ❤️ by <a href="https://github.com/sahilmishra03">Sahil Mishra</a>
 </p>

@@ -1,0 +1,303 @@
+[
+  {
+    "id": "youtube-revision-panel",
+    "title": "YouTube Revision Panel – Smart Playlist Revision Tool",
+    "githubUrl": "https://github.com/sahilmishra03/yt-revision-panel-extension",
+    "liveUrl": "https://yt-revision-panel-extension.openforge.in/",
+    "shortDescription": "A smart Chrome extension that lets learners mark important playlist moments with timestamps and revise them later using a clean, movable revision panel.",
+    "techStack": [
+      { "name": "HTML5", "iconId": "html", "category": "Frontend" },
+      { "name": "Tailwind CSS", "iconId": "tailwind", "category": "Frontend" },
+      { "name": "JavaScript", "iconId": "js", "category": "Frontend" },
+      {
+        "name": "Vercel",
+        "iconId": "vercel",
+        "category": "Deployment & DevOps"
+      }
+    ],
+    "status": "All Systems Operational",
+    "projectType": "Chrome Extension",
+    "timeline": "1–2 Days",
+    "role": "UI/UX Developer",
+    "overview": "YouTube Revision Panel is a lightweight Chrome extension designed to help learners revise important moments from YouTube playlist videos. It allows users to mark videos at exact timestamps, automatically save them, and revisit them later through a clean, draggable revision panel—making learning from long playlists organized, efficient, and stress-free.",
+    "whatUsersCanDo": [
+      "Mark important moments in playlist videos",
+      "Save exact timestamps automatically for later revision",
+      "View all marked videos in a playlist-specific revision panel",
+      "Resume videos with one click from saved time",
+      "Unmark videos once revision is completed",
+      "Drag, minimize, or move the panel while studying"
+    ],
+    "whyIBuiltThis": "Revising long YouTube playlists is often unorganized and inefficient. Important explanations are easy to forget without proper timestamps, and manual note-taking interrupts focus. I built this tool to make YouTube-based learning structured, efficient, and revision-friendly.",
+    "features": [
+      "Mark videos at the current timestamp with one click",
+      "Automatically saves exact revision time",
+      "Playlist-specific Revision Panel for organized revision",
+      "One-click resume from saved timestamps",
+      "Unmark videos after revision",
+      "Draggable and minimizable panel",
+      "Clean dark UI for comfortable studying",
+      "Works after page reload and browser restart"
+    ],
+    "futurePlans": [
+      "Enhance UI animations and transitions",
+      "Add export/import of revision data",
+      "Cloud sync support",
+      "Keyboard shortcut support",
+      "Analytics for revision tracking"
+    ],
+    "imagePath": "/mockups/0.png",
+    "demoLink": ""
+  },
+  {
+    "id": "eduguide",
+    "title": "EduGuide – Smart Teacher Discovery & Guidance Platform",
+    "githubUrl": "https://github.com/sahilmishra03/eduguide-app",
+    "liveUrl": "https://eduguide-app.openforge.in/",
+    "shortDescription": "A smart platform that helps college students quickly find the right teachers for academic and research guidance—based on specialization, availability, and expertise.",
+    "techStack": [
+      { "name": "Flutter", "iconId": "flutter", "category": "Frontend" },
+      {
+        "name": "Firebase",
+        "iconId": "firebase",
+        "category": "Backend & Database"
+      },
+      { "name": "Dart", "iconId": "dart", "category": "Languages" },
+      { "name": "HTML5", "iconId": "html", "category": "Frontend" },
+      { "name": "Tailwind CSS", "iconId": "tailwind", "category": "Frontend" },
+      { "name": "JavaScript", "iconId": "js", "category": "Frontend" },
+      {
+        "name": "Vercel",
+        "iconId": "vercel",
+        "category": "Deployment & DevOps"
+      }
+    ],
+    "status": "All Systems Operational",
+    "projectType": "App Development",
+    "timeline": "8–10 Weeks",
+    "role": "Mobile Developer",
+    "overview": "EduGuide is a smart platform designed to help college students quickly find the right teachers based on specialization, availability, and research interests. It simplifies academic and research guidance by providing centralized, real-time access to teacher information.",
+    "whatUsersCanDo": [
+      "Search teachers based on department, specialization, or availability",
+      "View detailed teacher profiles including research interests and contact details",
+      "Check real-time availability to plan meetings without confusion",
+      "Find office locations and timings easily",
+      "Save time and avoid miscommunication while seeking academic or research guidance"
+    ],
+    "whyIBuiltThis": "I built EduGuide to solve the common problem students face while finding the right teacher for guidance. Students often waste time manually checking availability and specializations, and miscommunication about office hours is frequent. This platform creates a single, easy-to-use system for smooth student–teacher interaction.",
+    "features": [
+      "Detailed Teacher Profiles with specialization, qualifications, research areas, contact details, and office location",
+      "Real-Time Availability Tracking to view free slots and avoid scheduling conflicts",
+      "Advanced Search & Filters to find teachers by department, specialization, and availability",
+      "Live Data Sync for instant updates across all devices",
+      "Easy & Centralized Access to all teacher information in one platform"
+    ],
+    "futurePlans": [
+      "Booking System – Book appointment slots directly with teacher approval",
+      "AI Study Assistant – Smart study tips and resource recommendations based on courses"
+    ],
+    "imagePath": "/mockups/1.png",
+    "demoLink": ""
+  },
+  {
+    "id": "openforge",
+    "title": "OpenForge – Community-Driven Open-Source Collaboration Platform",
+    "githubUrl": "https://github.com/krishgupta-5/openforge",
+    "liveUrl": "https://openforge.in/",
+    "shortDescription": "An open-source platform where developers share ideas, collaborate on projects, and turn concepts into real community-driven products.",
+    "techStack": [
+      { "name": "Next.js", "iconId": "nextjs", "category": "Frontend" },
+      {
+        "name": "Firebase",
+        "iconId": "firebase",
+        "category": "Backend & Database"
+      },
+      { "name": "Tailwind CSS", "iconId": "tailwind", "category": "Frontend" },
+      {
+        "name": "Vercel",
+        "iconId": "vercel",
+        "category": "Deployment & DevOps"
+      }
+    ],
+    "status": "Active",
+    "projectType": "Web Platform",
+    "timeline": "1 Week",
+    "role": "Full Stack Developer",
+    "overview": "OpenForge is a community-driven open-source platform where developers can share ideas, collaborate on projects, and build real products together. It provides a single space for turning ideas into maintained open-source projects, encouraging transparent collaboration, community ownership, and collective growth.",
+    "whatUsersCanDo": [
+      "Share open-source project ideas with the community",
+      "Explore and upvote ideas they find useful or interesting",
+      "Join ongoing projects as contributors or collaborators",
+      "Collaborate openly through discussions and shared development",
+      "Build and grow together in a community-driven environment"
+    ],
+    "whyIBuiltThis": "Many developers have strong ideas but no common place to build them collaboratively. Open-source ideas often never turn into real projects due to lack of contributors and structure. OpenForge creates a unified space where ideas evolve into maintained, community-owned open-source products.",
+    "features": [
+      "Idea Sharing – Post, explore, discuss, and upvote open-source project ideas",
+      "Project Collaboration – Join projects, contribute code, and work with defined roles",
+      "Community-Driven Development – Public discussions and transparent roadmaps",
+      "Open-Source Platform – Fully open codebase with community contributions",
+      "Developer Networking – Connect with like-minded developers and grow together"
+    ],
+    "futurePlans": [
+      "Build a strong in-platform developer community",
+      "Enable structured discussions and idea validation features",
+      "Community-led project ownership and moderation system",
+      "Encourage long-term collaboration and sustainable open-source growth"
+    ],
+    "imagePath": "/mockups/2.png",
+    "demoLink": ""
+  },
+  {
+    "id": "todo-app-flutter",
+    "title": "TODO App – Offline Task Management with Flutter",
+    "githubUrl": "https://github.com/krishgupta-5/Custom-Todo-App",
+    "liveUrl": "https://custom-todo-app.openforge.in/",
+    "shortDescription": "A simple offline-first TODO app built with Flutter and Hive to manage daily tasks quickly and efficiently.",
+    "techStack": [
+      { "name": "Flutter", "iconId": "flutter", "category": "Frontend" },
+      { "name": "Dart", "iconId": "dart", "category": "Languages" },
+      { "name": "HTML5", "iconId": "html", "category": "Frontend" },
+      { "name": "Tailwind CSS", "iconId": "tailwind", "category": "Frontend" },
+      {
+        "name": "Vercel",
+        "iconId": "vercel",
+        "category": "Deployment & DevOps"
+      },
+      { "name": "Git", "iconId": "git", "category": "Version Control" },
+      { "name": "GitHub", "iconId": "github", "category": "Version Control" }
+    ],
+    "status": "All Systems Operational",
+    "projectType": "Mobile App",
+    "timeline": "N/A",
+    "role": "Mobile Developer",
+    "overview": "TODO App is a simple and efficient task management application built using Flutter and Hive database. It allows users to organize daily tasks, set deadlines, and manage TODOs with a clean interface and offline-first functionality, ensuring fast performance and reliable access anytime.",
+    "whatUsersCanDo": [
+      "Create and manage daily TODOs",
+      "Edit or delete tasks anytime",
+      "Set deadlines for important work",
+      "Use the app completely offline",
+      "Organize tasks quickly with a clean UI"
+    ],
+    "whyIBuiltThis": "I built this project to strengthen my Flutter development skills, experiment with offline-first architecture using Hive, simplify daily task management, and practice CI/CD implementation using GitHub Actions.",
+    "features": [
+      "Add, update, and delete tasks easily",
+      "Set deadlines for important TODOs",
+      "Offline-first storage using Hive",
+      "Clean and simple UI for smooth usage",
+      "Fast performance with lightweight design"
+    ],
+    "futurePlans": [
+      "Add task categories and tags",
+      "Implement task priority levels",
+      "Add local notifications for deadlines",
+      "Dark mode improvements and UI enhancements"
+    ],
+    "imagePath": "/mockups/3.png",
+    "demoLink": ""
+  },
+  {
+    "id": "vakeel-diary",
+    "title": "Vakeel Diary – Digital Legal Practice Management System",
+    "githubUrl": "https://github.com/sahilmishra03/vakeel-dairy",
+    "liveUrl": "https://vakeel-dairy-app.openforge.in/",
+    "shortDescription": "A simple and powerful legal practice management app that helps Indian advocates organize cases, track hearings, and manage client information efficiently.",
+    "techStack": [
+      { "name": "Flutter", "iconId": "flutter", "category": "Frontend" },
+      {
+        "name": "Firebase",
+        "iconId": "firebase",
+        "category": "Backend & Database"
+      },
+      { "name": "Dart", "iconId": "dart", "category": "Languages" },
+      { "name": "HTML5", "iconId": "html", "category": "Frontend" },
+      { "name": "Tailwind CSS", "iconId": "tailwind", "category": "Frontend" },
+      { "name": "JavaScript", "iconId": "js", "category": "Frontend" },
+      {
+        "name": "Vercel",
+        "iconId": "vercel",
+        "category": "Deployment & DevOps"
+      }
+    ],
+    "status": "All Systems Operational",
+    "projectType": "Mobile App",
+    "timeline": "4 Weeks",
+    "role": "Mobile Developer",
+    "overview": "Vakeel Diary is a digital legal practice management app built for Indian advocates to manage cases, track court hearings, and organize client information efficiently. With offline-first functionality, hearing reminders, and PDF export support, it simplifies daily legal operations and enhances productivity.",
+    "whatUsersCanDo": [
+      "Add and manage cases with client and court details",
+      "Track daily and upcoming hearings easily",
+      "Generate and share PDFs like causelists and case histories",
+      "Use the app offline without internet dependency",
+      "Switch languages between English and Hindi"
+    ],
+    "whyIBuiltThis": "I built Vakeel Diary to simplify daily case and hearing management for Indian advocates. Many legal professionals rely on manual tracking and paperwork, which can lead to missed dates and inefficiencies. This app provides a secure, offline-first solution to help lawyers stay organized and stress-free.",
+    "features": [
+      "Case Management – Store and organize case details, clients, and court information",
+      "Hearing Tracker – Track daily hearings and upcoming court dates",
+      "PDF Exports – Generate causelists and case reports instantly",
+      "Offline-First – Access all data without internet",
+      "Multi-Language Support – Available in English and Hindi",
+      "Clean Interface – Simple, distraction-free design for legal professionals"
+    ],
+    "futurePlans": [
+      "Advocate Calendar – Visual calendar to track hearings, court holidays, and meetings",
+      "Advanced Client Management – Complete client directory with documents and case history",
+      "Expanded Multi-Language Support – Add more regional Indian languages",
+      "Smart Notifications – Timely alerts for hearings and deadlines",
+      "Dark Mode Support – Battery-friendly dark interface"
+    ],
+    "imagePath": "/mockups/4.png",
+    "demoLink": ""
+  },
+  {
+    "id": "babua-lms",
+    "title": "Babua LMS – Cohort-Based Learning Management Platform",
+    "githubUrl": "https://github.com/krishgupta-5/babua-lms",
+    "liveUrl": "https://babua-lms.openforge.in/",
+    "shortDescription": "A cohort-based learning platform that offers structured, high-quality education for free, with optional paid career support to help learners grow and succeed.",
+    "techStack": [
+      { "name": "Next.js", "iconId": "nextjs", "category": "Frontend" },
+      {
+        "name": "Firebase",
+        "iconId": "firebase",
+        "category": "Backend & Database"
+      },
+      { "name": "Tailwind CSS", "iconId": "tailwind", "category": "Frontend" },
+      {
+        "name": "Vercel",
+        "iconId": "vercel",
+        "category": "Deployment & DevOps"
+      }
+    ],
+    "status": "All Systems Operational",
+    "projectType": "Web Platform",
+    "timeline": "4 Weeks",
+    "role": "Full Stack Developer",
+    "overview": "Babua LMS is a cohort-based learning platform designed to provide structured, high-quality education completely free of cost. It organizes learning into cohorts, modules, and lessons, giving students a clear path without confusion. Optional paid career services such as mentorship, mock interviews, and job support are available for learners who want deeper guidance.",
+    "whatUsersCanDo": [
+      "Join learning cohorts and access structured courses",
+      "Watch lessons in a guided sequence",
+      "Learn for free without any paywalls",
+      "Choose optional career services like mentorship or mock interviews",
+      "Track progress through modules and lessons"
+    ],
+    "whyIBuiltThis": "I built Babua LMS to solve the problem of scattered and unstructured free learning resources. Many students lack clear learning paths and consistency, and most platforms force paid subscriptions. This platform keeps education free while offering optional career support for those who need it.",
+    "features": [
+      "Cohort-Based Learning with structured courses and guided flow",
+      "Module & Lesson System for organized and step-by-step learning",
+      "Free Access to All Learning Content without restrictions",
+      "Admin Panel to manage courses, modules, and lessons dynamically",
+      "Clean & Distraction-Free UI focused on learning",
+      "Optional Paid Career Services like mentorship and mock interviews"
+    ],
+    "futurePlans": [
+      "Introduce discussion forums for cohort interaction",
+      "Add certification generation system",
+      "Implement performance analytics and progress insights",
+      "Expand career services with placement partnerships"
+    ],
+    "imagePath": "/mockups/5.png",
+    "demoLink": ""
+  }
+]

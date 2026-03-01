@@ -1,11 +1,13 @@
 "use client";
 
 import { useState } from "react";
+
 import { ChevronDown, ChevronUp } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "motion/react";
+
+import { ProjectType } from "@/types/project";
 
 import ProjectCard from "./ProjectCard";
-import { ProjectType } from "./Projects";
 
 interface ProjectsGridProps {
   projects: ProjectType[];
@@ -30,14 +32,17 @@ const ProjectsGrid = ({ projects, initialCount = 4 }: ProjectsGridProps) => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              transition={{ 
-                duration: 0.4, 
-                delay: showAll && index >= initialCount ? (index - initialCount) * 0.1 : 0,
-                ease: "easeOut" 
+              transition={{
+                duration: 0.4,
+                delay:
+                  showAll && index >= initialCount
+                    ? (index - initialCount) * 0.1
+                    : 0,
+                ease: "easeOut",
               }}
               className="h-full"
             >
-              <ProjectCard project={project} />
+              <ProjectCard project={project} projectIndex={index} />
             </motion.div>
           ))}
         </AnimatePresence>

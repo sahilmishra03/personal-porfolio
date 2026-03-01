@@ -1,19 +1,19 @@
 "use client";
 
 import React, { useState } from "react";
+
 import Image from "next/image";
 import Link from "next/link";
 
-import ThemeToggle from "../ThemeToggle";
 import SearchDialog from "../SearchDialog/SearchDialog";
+import ThemeToggle from "../ui/ThemeToggle";
 
 const NavBar = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   return (
     <>
-      <nav className="sticky top-0 z-50 flex items-center justify-between bg-background/60 px-8 py-3 backdrop-blur-md sm:px-[52px] md:mx-auto md:max-w-[1170px] md:justify-around md:px-0 border-b border-border/40">
-        
+      <nav className="from-background bg-background/60 border-border/40 fixed sticky inset-x-0 top-0 z-50 flex h-[80px] items-center justify-between border-b bg-gradient-to-b to-transparent [mask-image:linear-gradient(to_bottom,black_50%,transparent)] px-8 py-3 backdrop-blur-[5px] [-webkit-mask-image:linear-gradient(to_bottom,black_50%,transparent)] sm:px-[52px] md:mx-auto md:max-w-[1170px] md:justify-around md:px-0 dark:[mask-image:linear-gradient(to_bottom,black_50%,transparent)] dark:[-webkit-mask-image:linear-gradient(to_bottom,black_50%,transparent)]">
         <div className="flex items-center gap-4">
           <Link
             href="/"
@@ -28,27 +28,33 @@ const NavBar = () => {
             />
           </Link>
           <div className="flex items-center gap-4 text-base font-medium">
-            <Link className="text-foreground/80 transition-colors hover:text-foreground" href="/#work">
-              Work
+            <Link
+              className="text-foreground/80 hover:text-foreground transition-colors"
+              href="/resources"
+            >
+              Resources
             </Link>
-            <Link className="text-foreground/80 transition-colors hover:text-foreground" href="/#projects">
+            <Link
+              className="text-foreground/80 hover:text-foreground transition-colors"
+              href="/#projects"
+            >
               Projects
             </Link>
           </div>
         </div>
 
         <div className="flex items-center gap-4">
-          <button 
-            type="button" 
+          <button
+            type="button"
             onClick={() => setIsSearchOpen(true)}
-            className="flex h-9 w-24 items-center justify-center rounded-md border border-input bg-muted/50 text-sm font-medium text-muted-foreground shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring sm:w-32"
+            className="border-input bg-muted/50 text-muted-foreground hover:bg-accent hover:text-accent-foreground focus-visible:ring-ring flex h-9 w-24 items-center justify-center rounded-md border text-sm font-medium shadow-sm transition-colors focus-visible:ring-2 focus-visible:outline-none sm:w-32"
           >
             Search
           </button>
           <ThemeToggle />
         </div>
       </nav>
-      
+
       {/* Search Dialog */}
       <SearchDialog isOpen={isSearchOpen} setIsOpen={setIsSearchOpen} />
     </>
