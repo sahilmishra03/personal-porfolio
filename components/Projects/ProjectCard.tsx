@@ -148,9 +148,6 @@ const ProjectCard = ({ project }: { project: ProjectType }) => {
       onKeyDown={(e) => e.key === "Enter" && handleCardClick(e)}
       className="group flex h-full cursor-pointer flex-col overflow-hidden rounded-3xl border border-neutral-200 bg-neutral-50 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-neutral-300 hover:shadow-md dark:border-neutral-800 dark:bg-neutral-900/50 dark:hover:border-neutral-700 dark:hover:shadow-black/50"
     >
-      {/* FIXED: Changed to aspect-[3/2] w-full to guarantee uniform image sizing. 
-        Added a subtle background color behind the image for a cleaner loading state.
-      */}
       <div className="relative aspect-[3/2] w-full overflow-hidden border-b border-neutral-200 bg-neutral-100 dark:border-neutral-800 dark:bg-neutral-900">
         {!imageLoaded && (
           <div className="absolute inset-0 z-0 animate-pulse bg-neutral-200 dark:bg-neutral-800"></div>
@@ -163,7 +160,6 @@ const ProjectCard = ({ project }: { project: ProjectType }) => {
           alt={`Screenshot of ${projectName}`}
           fill
           loading="lazy"
-          // Added absolute inset-0 to fill the aspect container perfectly
           className={`z-10 object-cover transition-transform duration-700 ease-out group-hover:scale-105 ${
             imageLoaded ? "opacity-100" : "opacity-0"
           }`}
@@ -172,7 +168,8 @@ const ProjectCard = ({ project }: { project: ProjectType }) => {
         />
       </div>
 
-      <div className="flex flex-1 flex-col p-5 sm:p-6">
+      {/* MOBILE FIX: Reduced padding from p-5 to p-4 on small screens */}
+      <div className="flex flex-1 flex-col p-4 sm:p-6">
         <div className="mb-3 flex items-start justify-between gap-4">
           <h3 className="line-clamp-1 text-xl font-bold tracking-tight text-neutral-900 dark:text-white">
             {projectName}
@@ -185,20 +182,21 @@ const ProjectCard = ({ project }: { project: ProjectType }) => {
           </div>
         </div>
 
-        <p className="mb-6 line-clamp-3 text-base text-neutral-600 dark:text-neutral-400">
+        {/* MOBILE FIX: Slightly smaller text on mobile to fit content better */}
+        <p className="mb-6 line-clamp-3 text-sm sm:text-base text-neutral-600 dark:text-neutral-400">
           {projectDescription}
         </p>
 
-        {/* Technologies Block pushed to bottom evenly using mt-auto */}
         <div className="mt-auto flex flex-col">
           <h4 className="mb-3 text-sm font-medium text-neutral-500 dark:text-neutral-400">
             Technologies
           </h4>
 
-          <div className="mb-6 flex flex-wrap gap-3">
+          {/* MOBILE FIX: Smaller gap on mobile */}
+          <div className="mb-6 flex flex-wrap gap-2 sm:gap-3">
             {techArray.map((t: string) => {
               const iconUrl = getTechIconUrl(t);
-              if (!iconUrl) return null; // Only render if an icon is available
+              if (!iconUrl) return null;
               return (
                 <span key={t} className="flex items-center justify-center">
                   <Image
@@ -207,7 +205,7 @@ const ProjectCard = ({ project }: { project: ProjectType }) => {
                     width={24}
                     height={24}
                     loading="lazy"
-                    className="h-6 w-6 object-contain"
+                    className="h-5 w-5 sm:h-6 sm:w-6 object-contain"
                     unoptimized
                   />
                 </span>
@@ -215,20 +213,22 @@ const ProjectCard = ({ project }: { project: ProjectType }) => {
             })}
           </div>
 
-          <div className="flex items-center justify-between border-t border-neutral-200 pt-4 dark:border-neutral-800">
-            {/* Styled Status Pill matching screenshot */}
+          {/* MOBILE FIX: Added flex-wrap and gap-y-3 so it stacks if there's no room */}
+          <div className="flex flex-wrap items-center justify-between gap-x-2 gap-y-3 border-t border-neutral-200 pt-4 dark:border-neutral-800">
             <div
               className={`flex items-center gap-2 rounded-full px-3 py-1.5 transition-colors ${statusColor.bg} ${statusColor.text}`}
             >
               <span
-                className={`relative inline-flex h-2 w-2 rounded-full ${statusColor.dot}`}
+                className={`relative inline-flex h-2 w-2 shrink-0 rounded-full ${statusColor.dot}`}
               ></span>
-              <span className="text-[13px] font-medium tracking-tight">
+              {/* MOBILE FIX: whitespace-nowrap prevents the text from wrapping onto two lines */}
+              <span className="whitespace-nowrap text-xs sm:text-[13px] font-medium tracking-tight">
                 {currentStatus}
               </span>
             </div>
 
-            <div className="flex items-center gap-1.5 text-sm font-medium text-neutral-500 transition-colors group-hover:text-neutral-900 hover:underline dark:group-hover:text-white">
+            {/* MOBILE FIX: shrink-0 ensures the button never gets squished */}
+            <div className="flex shrink-0 items-center gap-1.5 text-sm font-medium text-neutral-500 transition-colors group-hover:text-neutral-900 hover:underline dark:group-hover:text-white">
               View Details
               <ArrowRight
                 size={16}

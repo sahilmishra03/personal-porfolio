@@ -95,9 +95,11 @@ const page = () => {
       </FadeIn>
 
       {/* Projects (Most Important) */}
-      <FadeIn>
-        <Projects />
-      </FadeIn>
+      <section id="projects" className="scroll-mt-24">
+        <FadeIn>
+          <Projects />
+        </FadeIn>
+      </section>
 
       {/* Problem Solving / DSA Strength */}
       <FadeIn>
