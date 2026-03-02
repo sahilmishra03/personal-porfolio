@@ -74,8 +74,7 @@ export const getGitHubData = async (): Promise<GitHubData> => {
 
     const totalContributions =
       user.contributionsCollection?.contributionCalendar?.totalContributions;
-    const totalCommits =
-      user.contributionsCollection?.totalCommitContributions;
+    const totalCommits = user.contributionsCollection?.totalCommitContributions;
     const years = user.contributionsCollection?.contributionYears || [];
 
     // Helper function for year fetching

@@ -1,8 +1,9 @@
 import { ArrowUpRight } from "lucide-react";
 
+import { getGitHubData } from "@/lib/githubData";
+
 import GitHubLogo from "../ui/GitHubLogo";
 import GitHubCalendarClient from "./GitHubCalendarClient";
-import { getGitHubData } from "@/lib/githubData";
 
 // Reusable stat block for a cleaner layout
 const StatBlock = ({

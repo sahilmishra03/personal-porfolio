@@ -1,9 +1,10 @@
 import { Cpu, Layers, MapPin } from "lucide-react";
 
+import { getGitHubData } from "@/lib/githubData";
+
 import projectsData from "../../data/projects.json";
 import { techStack } from "../../data/techStack";
 import GitHubLogo from "../ui/GitHubLogo";
-import { getGitHubData } from "@/lib/githubData";
 
 // Helper function to count unique technologies from TechStack section
 const getUniqueTechCount = () => {
