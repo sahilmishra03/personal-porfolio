@@ -3,48 +3,7 @@ import { Cpu, Layers, MapPin } from "lucide-react";
 import projectsData from "../../data/projects.json";
 import { techStack } from "../../data/techStack";
 import GitHubLogo from "../ui/GitHubLogo";
-
-// Fetch real GitHub data
-const getGitHubData = async () => {
-  try {
-    const token = process.env.GITHUB_TOKEN || process.env.GITHUB_PATH;
-    if (!token) return { commits: null, contributions: null };
-
-    const res = await fetch("https://api.github.com/graphql", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${token}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        query: `query {
-          user(login: "sahilmishra03") {
-            contributionsCollection {
-              contributionCalendar {
-                totalContributions
-              }
-              totalCommitContributions
-            }
-          }
-        }`,
-      }),
-      next: { revalidate: 3600 }, // Cache for 1 hour
-    });
-
-    const json = await res.json();
-    const user = json?.data?.user;
-
-    return {
-      commits:
-        user?.contributionsCollection?.contributionCalendar?.totalContributions,
-      contributions:
-        user?.contributionsCollection?.contributionCalendar?.totalContributions,
-    };
-  } catch (error) {
-    console.error("Failed to fetch GitHub data:", error);
-    return { commits: null, contributions: null };
-  }
-};
+import { getGitHubData } from "@/lib/githubData";
 
 // Helper function to count unique technologies from TechStack section
 const getUniqueTechCount = () => {
@@ -62,7 +21,7 @@ export const Stats = async () => {
     },
     {
       label: "GitHub Commits",
-      value: githubData.commits ? String(githubData.commits) : "413",
+      value: githubData.totalCommits ? String(githubData.totalCommits) : "413",
       icon: GitHubLogo,
     },
     {

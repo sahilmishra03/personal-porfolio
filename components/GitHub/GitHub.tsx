@@ -2,132 +2,7 @@ import { ArrowUpRight } from "lucide-react";
 
 import GitHubLogo from "../ui/GitHubLogo";
 import GitHubCalendarClient from "./GitHubCalendarClient";
-
-// Fetch GitHub contribution count server-side
-const getGitHubContributions = async (): Promise<{
-  total: number | null;
-  thisYear: number | null;
-  lastYear: number | null;
-  growth: number | null;
-}> => {
-  try {
-    const token = process.env.GITHUB_TOKEN || process.env.GITHUB_PATH;
-    if (!token) {
-      console.log("GitHub token not found, using fallback data");
-      return { total: null, thisYear: null, lastYear: null, growth: null };
-    }
-
-    const currentYear = new Date().getFullYear();
-    const lastYear = currentYear - 1;
-
-    // Fetch total contributions
-    const res = await fetch("https://api.github.com/graphql", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${token}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        query: `query {
-          user(login: "sahilmishra03") {
-            contributionsCollection {
-              contributionCalendar {
-                totalContributions
-              }
-              contributionYears
-            }
-          }
-        }`,
-      }),
-      next: { revalidate: 300 },
-    });
-
-    if (!res.ok) {
-      console.error("GitHub API request failed:", res.status, res.statusText);
-      return { total: null, thisYear: null, lastYear: null, growth: null };
-    }
-
-    const json = await res.json();
-    const user = json?.data?.user;
-
-    if (!user) {
-      console.error("No user data found in GitHub API response");
-      return { total: null, thisYear: null, lastYear: null, growth: null };
-    }
-
-    const total =
-      user.contributionsCollection?.contributionCalendar?.totalContributions;
-    const years = user.contributionsCollection?.contributionYears || [];
-
-    let thisYearContributions = 0;
-    let lastYearContributions = 0;
-
-    // Helper function for year fetching
-    const fetchYearContributions = async (year: number) => {
-      const yearRes = await fetch("https://api.github.com/graphql", {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          query: `query {
-            user(login: "sahilmishra03") {
-              contributionsCollection(from: "${year}-01-01T00:00:00Z", to: "${year}-12-31T23:59:59Z") {
-                contributionCalendar {
-                  totalContributions
-                }
-              }
-            }
-          }`,
-        }),
-      });
-
-      if (!yearRes.ok) {
-        console.error(`Failed to fetch ${year} contributions:`, yearRes.status);
-        return 0;
-      }
-
-      const data = await yearRes.json();
-      const contributions =
-        data?.data?.user?.contributionsCollection?.contributionCalendar
-          ?.totalContributions || 0;
-      console.log(`${year} contributions:`, contributions);
-      return contributions;
-    };
-
-    if (years.includes(currentYear)) {
-      thisYearContributions = await fetchYearContributions(currentYear);
-    }
-    if (years.includes(lastYear)) {
-      lastYearContributions = await fetchYearContributions(lastYear);
-    }
-
-    const growth =
-      lastYearContributions > 0
-        ? ((thisYearContributions - lastYearContributions) /
-            lastYearContributions) *
-          100
-        : 0;
-
-    console.log("Final GitHub data:", {
-      total,
-      thisYear: thisYearContributions,
-      lastYear: lastYearContributions,
-      growth,
-    });
-
-    return {
-      total,
-      thisYear: thisYearContributions,
-      lastYear: lastYearContributions,
-      growth,
-    };
-  } catch (error) {
-    console.error("Failed to fetch GitHub contributions:", error);
-    return { total: null, thisYear: null, lastYear: null, growth: null };
-  }
-};
+import { getGitHubData } from "@/lib/githubData";
 
 // Reusable stat block for a cleaner layout
 const StatBlock = ({
@@ -152,15 +27,15 @@ const StatBlock = ({
 );
 
 const GitHub = async () => {
-  const contributions = await getGitHubContributions();
+  const githubData = await getGitHubData();
   const currentYear = new Date().getFullYear();
   const lastYear = currentYear - 1;
 
   // Always use real-time data - no hardcoded fallbacks
   if (
-    !contributions.total ||
-    contributions.thisYear === null ||
-    contributions.lastYear === null
+    !githubData.totalCommits ||
+    githubData.thisYearContributions === null ||
+    githubData.lastYearContributions === null
   ) {
     return (
       <section id="github" className="mx-auto mt-12 max-w-3xl px-0 sm:mt-16">
@@ -182,10 +57,10 @@ const GitHub = async () => {
     );
   }
 
-  const totalDisplay = contributions.total.toLocaleString();
-  const thisYearDisplay = contributions.thisYear.toLocaleString();
-  const lastYearDisplay = contributions.lastYear.toLocaleString();
-  const growthValue = contributions.growth || 0;
+  const totalDisplay = githubData.totalCommits.toLocaleString();
+  const thisYearDisplay = githubData.thisYearContributions.toLocaleString();
+  const lastYearDisplay = githubData.lastYearContributions.toLocaleString();
+  const growthValue = githubData.growth || 0;
   const growthString = `${growthValue >= 0 ? "+" : ""}${growthValue.toFixed(1)}%`;
   const growthColor = growthValue >= 0 ? "text-emerald-500" : "text-red-500";
 
