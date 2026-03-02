@@ -7,6 +7,8 @@
  * @param theme - The current theme of the application ('light' or 'dark')
  * @returns The full image URL
  */
+import { getCachedIconUrl } from "@/utils/iconCache";
+
 export const techStack = [
   { name: "Android Studio", iconId: "androidstudio", desc: "IDE" },
   { name: "AWS", iconId: "aws", desc: "Cloud Services" },
@@ -53,5 +55,5 @@ export const getTechLogoUrl = (
   iconId: string,
   theme: "light" | "dark" = "light"
 ) => {
-  return `https://skillicons.dev/icons?i=${iconId}&theme=${theme}`;
+  return getCachedIconUrl(iconId, theme);
 };

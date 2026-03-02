@@ -59,6 +59,16 @@ export default function RootLayout({
           as="image"
           type="image/webp"
         />
+        <link
+          rel="preload"
+          href="/Coding_Profile.jpg"
+          as="image"
+          type="image/jpeg"
+        />
+        <link rel="dns-prefetch" href="//skillicons.dev" />
+        <link rel="dns-prefetch" href="//cdn.simpleicons.org" />
+        <link rel="preconnect" href="https://skillicons.dev" />
+        <link rel="preconnect" href="https://cdn.simpleicons.org" />
       </head>
       <body className="antialiased" suppressHydrationWarning={true}>
         <ThemeProvider>

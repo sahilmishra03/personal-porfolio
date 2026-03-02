@@ -8,6 +8,8 @@ import {
   useSyncExternalStore,
 } from "react";
 
+import { preloadCriticalIcons } from "@/utils/iconCache";
+
 interface ThemeContextType {
   isDark: boolean;
   toggleTheme: (x?: number, y?: number) => void;
@@ -49,6 +51,11 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
     themeStore.getSnapshot,
     themeStore.getServerSnapshot
   );
+
+  // Preload critical icons when theme changes
+  useEffect(() => {
+    preloadCriticalIcons(isDark ? "dark" : "light");
+  }, [isDark]);
 
   // Handle initial theme sync after mount to prevent hydration issues
   useEffect(() => {
