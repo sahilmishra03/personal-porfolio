@@ -15,7 +15,7 @@ export default function PageTransition({ children }: PageTransitionProps) {
     <>
       {isNavigating && <LoadingSpinner />}
       <div
-        className={`transition-all duration-300 ease-in-out ${
+        className={`w-full transition-all duration-300 ease-in-out ${
           isNavigating
             ? "-translate-y-2 transform opacity-0"
             : "translate-y-0 transform opacity-100"

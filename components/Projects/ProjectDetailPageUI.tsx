@@ -248,45 +248,45 @@ export default function ProjectDetailPageUI({
         <div
           className={`flex flex-wrap items-center justify-between gap-6 rounded-xl border px-6 py-5 md:flex-nowrap ${isDark ? "border-zinc-800/80 bg-[#1C1C1E]" : "border-gray-200 bg-white"} mb-8 shadow-sm`}
         >
-          <div className="flex w-[45%] flex-col gap-1 md:w-auto">
+          <div className="flex w-[45%] flex-col gap-1 md:w-auto lg:w-[22%]">
             <span
-              className={`text-[10px] font-black tracking-widest uppercase ${isDark ? "font-extralight text-zinc-500" : "text-gray-400"}`}
+              className={`text-[10px] font-black tracking-widest uppercase ${isDark ? "text-zinc-500" : "text-gray-400"}`}
             >
               Timeline
             </span>
             <span
-              className={`text-[13px] font-semibold ${isDark ? "text-white" : "text-gray-900"}`}
+              className={`text-[13px] font-bold ${isDark ? "text-white" : "text-gray-900"}`}
             >
               {project.timeline || "N/A"}
             </span>
           </div>
-          <div className="flex w-[45%] flex-col gap-1 md:w-auto">
+          <div className="flex w-[45%] flex-col gap-1 md:w-auto lg:w-[22%]">
             <span
-              className={`text-[10px] font-black tracking-widest uppercase ${isDark ? "font-extralight text-zinc-500" : "text-gray-400"}`}
+              className={`text-[10px] font-black tracking-widest uppercase ${isDark ? "text-zinc-500" : "text-gray-400"}`}
             >
               Role
             </span>
             <span
-              className={`text-[13px] font-semibold ${isDark ? "text-white" : "text-gray-900"}`}
+              className={`text-[13px] font-bold ${isDark ? "text-white" : "text-gray-900"}`}
             >
               {project.role || "N/A"}
             </span>
           </div>
-          <div className="flex w-[45%] flex-col gap-1 md:w-auto">
+          <div className="flex w-[45%] flex-col gap-1 md:w-auto lg:w-[22%]">
             <span
-              className={`text-[10px] font-black tracking-widest uppercase ${isDark ? "font-extralight text-zinc-500" : "text-gray-400"}`}
+              className={`text-[10px] font-black tracking-widest uppercase ${isDark ? "text-zinc-500" : "text-gray-400"}`}
             >
               Team
             </span>
             <span
-              className={`text-[13px] font-semibold ${isDark ? "text-white" : "text-gray-900"}`}
+              className={`text-[13px] font-bold ${isDark ? "text-white" : "text-gray-900"}`}
             >
               Solo
             </span>
           </div>
-          <div className="flex w-[45%] flex-col gap-1 md:w-auto">
+          <div className="flex w-[45%] flex-col gap-1 md:w-auto lg:w-[22%]">
             <span
-              className={`text-[10px] font-black tracking-widest uppercase ${isDark ? "font-extralight text-zinc-500" : "text-gray-400"}`}
+              className={`text-[10px] font-black tracking-widest uppercase ${isDark ? "text-zinc-500" : "text-gray-400"}`}
             >
               Status
             </span>

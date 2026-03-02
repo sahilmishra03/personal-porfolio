@@ -70,7 +70,10 @@ export default function RootLayout({
         <link rel="preconnect" href="https://skillicons.dev" />
         <link rel="preconnect" href="https://cdn.simpleicons.org" />
       </head>
-      <body className="antialiased" suppressHydrationWarning={true}>
+      <body
+        className="overflow-x-hidden antialiased"
+        suppressHydrationWarning={true}
+      >
         <ThemeProvider>
           <NavBar />
           <PageTransition>{children}</PageTransition>

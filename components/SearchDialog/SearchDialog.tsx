@@ -15,6 +15,7 @@ import {
   User,
 } from "lucide-react";
 
+import projectsData from "@/data/projects.json";
 import { cn } from "@/lib/utils";
 
 const Command = React.forwardRef<
@@ -53,7 +54,8 @@ const CommandDialog = React.forwardRef<
       <div
         ref={ref}
         className={cn(
-          "bg-background fixed top-[50%] left-[50%] z-50 grid w-full max-w-md translate-x-[-50%] translate-y-[-50%] overflow-hidden rounded-xl border shadow-lg sm:rounded-xl",
+          // Changed w-full to w-[95vw] sm:w-full to give edge padding on mobile
+          "bg-background fixed top-[50%] left-[50%] z-50 grid w-[95vw] max-w-md translate-x-[-50%] translate-y-[-50%] overflow-hidden rounded-xl border shadow-lg sm:w-full sm:rounded-xl",
           className
         )}
         {...props}
@@ -90,7 +92,7 @@ const CommandList = React.forwardRef<
   <CommandPrimitive.List
     ref={ref}
     className={cn(
-      "max-h-[250px] overflow-x-hidden overflow-y-auto [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden",
+      "max-h-[300px] overflow-x-hidden overflow-y-auto [-ms-overflow-style:none] [scrollbar-width:none] sm:max-h-[250px] [&::-webkit-scrollbar]:hidden",
       className
     )}
     {...props}
@@ -144,7 +146,8 @@ const CommandItem = React.forwardRef<
   <CommandPrimitive.Item
     ref={ref}
     className={cn(
-      "aria-selected:bg-accent aria-selected:text-accent-foreground relative flex cursor-default items-center rounded-sm px-2 py-1.5 text-sm outline-none select-none data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50",
+      // Increased padding (py-2.5) for better mobile touch targets
+      "aria-selected:bg-accent aria-selected:text-accent-foreground relative flex cursor-default items-center rounded-sm px-2 py-2.5 text-sm outline-none select-none data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50 sm:py-1.5",
       className
     )}
     {...props}
@@ -242,56 +245,18 @@ const searchItems: SearchItem[] = [
     href: "/#achievements",
   },
 
-  // Projects from JSON
-  {
-    id: "youtube-revision-panel",
-    title: "YouTube Revision Panel",
-    description: "Smart Chrome extension for playlist revision with timestamps",
-    category: "Projects",
+  // Dynamic Projects from JSON
+  ...(projectsData as any[]).map((project) => ({
+    id: project.id,
+    title:
+      project.title?.split("–")[0].trim() ||
+      project.title ||
+      "Untitled Project",
+    description: project.shortDescription || "No description available",
+    category: "Projects" as const,
     icon: Code,
-    href: "/projects/youtube-revision-panel",
-  },
-  {
-    id: "eduguide",
-    title: "EduGuide",
-    description: "Smart teacher discovery and guidance platform for students",
-    category: "Projects",
-    icon: Code,
-    href: "/projects/eduguide",
-  },
-  {
-    id: "openforge",
-    title: "OpenForge",
-    description: "Community-driven open-source collaboration platform",
-    category: "Projects",
-    icon: Code,
-    href: "/projects/openforge",
-  },
-  {
-    id: "todo-app-flutter",
-    title: "TODO App",
-    description: "Offline-first task management app built with Flutter",
-    category: "Projects",
-    icon: Code,
-    href: "/projects/todo-app-flutter",
-  },
-  {
-    id: "vakeel-diary",
-    title: "Vakeel Diary",
-    description:
-      "Digital legal practice management system for Indian advocates",
-    category: "Projects",
-    icon: Code,
-    href: "/projects/vakeel-diary",
-  },
-  {
-    id: "babua-lms",
-    title: "Babua LMS",
-    description: "Cohort-based learning management platform",
-    category: "Projects",
-    icon: Code,
-    href: "/projects/babua-lms",
-  },
+    href: `/projects/${project.id}`,
+  })),
 ];
 
 const SearchDialog = ({ isOpen, setIsOpen }: SearchDialogProps) => {
@@ -380,6 +345,19 @@ const SearchDialog = ({ isOpen, setIsOpen }: SearchDialogProps) => {
       teacher: ["education", "guidance", "platform", "discovery", "eduguide"],
       legal: ["lawyer", "advocate", "case", "management", "diary", "vakeel"],
       collaboration: ["community", "open-source", "platform", "openforge"],
+      portfolio: [
+        "website",
+        "personal",
+        "showcase",
+        "projects",
+        "skills",
+        "about",
+        "sahil",
+        "mishra",
+        "search",
+        "modern",
+        "design",
+      ],
     };
 
     let searchValue = `${item.title} ${item.description}`;
@@ -400,13 +378,7 @@ const SearchDialog = ({ isOpen, setIsOpen }: SearchDialogProps) => {
   const handleSelect = (item: SearchItem) => {
     setIsOpen(false);
     if (item.href.startsWith("http")) {
-      // External link - open in new tab
       window.open(item.href, "_blank", "noopener,noreferrer");
-    } else if (item.href.startsWith("#")) {
-      // Use router for hash navigation to avoid direct DOM manipulation
-      router.push(item.href);
-    } else if (item.href.includes("/#")) {
-      router.push(item.href);
     } else {
       router.push(item.href);
     }
@@ -415,7 +387,7 @@ const SearchDialog = ({ isOpen, setIsOpen }: SearchDialogProps) => {
   return (
     <CommandDialog open={isOpen} onOpenChange={setIsOpen}>
       <Command className="rounded-lg border shadow-md">
-        <CommandInput placeholder="Search portfolio and projects... (try: 'youtube', 'flutter', 'legal', 'learning')" />
+        <CommandInput placeholder="Search portfolio and projects..." />
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
 
@@ -428,14 +400,14 @@ const SearchDialog = ({ isOpen, setIsOpen }: SearchDialogProps) => {
                   value={getSearchValue(item)}
                   onSelect={() => handleSelect(item)}
                 >
-                  <item.icon className="mr-2 h-4 w-4" />
-                  <div className="flex-1">
-                    <div className="font-medium">{item.title}</div>
-                    <div className="text-muted-foreground text-sm">
+                  <item.icon className="mr-2 h-4 w-4 shrink-0" />
+                  <div className="flex-1 overflow-hidden pr-2">
+                    <div className="truncate font-medium">{item.title}</div>
+                    <div className="text-muted-foreground truncate text-xs sm:text-sm">
                       {item.description}
                     </div>
                   </div>
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                  <ArrowRight className="ml-auto h-4 w-4 shrink-0 opacity-50" />
                 </CommandItem>
               ))}
           </CommandGroup>
@@ -449,14 +421,20 @@ const SearchDialog = ({ isOpen, setIsOpen }: SearchDialogProps) => {
                   value={getSearchValue(item)}
                   onSelect={() => handleSelect(item)}
                 >
-                  <item.icon className="mr-2 h-4 w-4" />
-                  <div className="flex-1">
-                    <div className="font-medium">{item.title}</div>
-                    <div className="text-muted-foreground text-sm">
+                  {/* Added shrink-0 to prevent icon squishing */}
+                  <item.icon className="mr-2 h-4 w-4 shrink-0" />
+
+                  {/* Added overflow-hidden and pr-2 to constraint the text box */}
+                  <div className="flex-1 overflow-hidden pr-2">
+                    {/* Added truncate class here */}
+                    <div className="truncate font-medium">{item.title}</div>
+                    <div className="text-muted-foreground truncate text-xs sm:text-sm">
                       {item.description}
                     </div>
                   </div>
-                  <ArrowRight className="ml-2 h-4 w-4" />
+
+                  {/* Pushed arrow to end and prevented squishing */}
+                  <ArrowRight className="ml-auto h-4 w-4 shrink-0 opacity-50" />
                 </CommandItem>
               ))}
           </CommandGroup>

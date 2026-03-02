@@ -299,5 +299,58 @@
     ],
     "imagePath": "/mockups/5.png",
     "demoLink": ""
+  },
+  {
+    "id": "sahil-portfolio",
+    "title": "Sahil Mishra Portfolio – Personal Portfolio Website",
+    "githubUrl": "https://github.com/sahilmishra03/personal-porfolio.git",
+    "liveUrl": "https://sahilmishra.vercel.app/",
+    "shortDescription": "A modern, responsive portfolio website showcasing projects, skills, and professional journey with smooth animations and intuitive navigation.",
+    "techStack": [
+      { "name": "Next.js", "iconId": "nextjs", "category": "Frontend" },
+      { "name": "TypeScript", "iconId": "ts", "category": "Languages" },
+      { "name": "Tailwind CSS", "iconId": "tailwind", "category": "Frontend" },
+      {
+        "name": "Vercel",
+        "iconId": "vercel",
+        "category": "Deployment & DevOps"
+      }
+    ],
+    "status": "All Systems Operational",
+    "projectType": "Portfolio Website",
+    "timeline": "Ongoing",
+    "role": "Full Stack Developer",
+    "overview": "A modern portfolio website built with Next.js and TypeScript to showcase professional work, projects, and technical skills. Features smooth animations, responsive design, dark mode support, and an intelligent search system for seamless navigation through content and projects.",
+    "whatUsersCanDo": [
+      "Browse projects and filter by technology",
+      "Search portfolio content with intelligent search",
+      "View detailed project information and live demos",
+      "Explore skills and tech stack",
+      "Contact through integrated forms",
+      "Experience smooth animations and transitions"
+    ],
+    "whyIBuiltThis": "I built this portfolio to create a professional online presence that effectively showcases my technical abilities and project experience. It serves as a centralized hub for potential employers, collaborators, and clients to explore my work and understand my capabilities.",
+    "features": [
+      "Responsive Design for all devices and screen sizes",
+      "Dark/Light Mode with smooth theme transitions",
+      "Intelligent Search System for quick content discovery",
+      "Project Filtering by technology and category",
+      "Smooth Animations using Framer Motion",
+      "Interactive Project Cards with live demos",
+      "Skills Section with technology stack visualization",
+      "Contact Forms and Social Media Integration",
+      "Performance Optimized with fast loading times"
+    ],
+    "futurePlans": [
+      "Add blog section for technical articles",
+      "Implement advanced project filtering and search",
+      "Add analytics dashboard for portfolio insights",
+      "Enhance accessibility features and keyboard navigation",
+      "Connect daily purpose tools and services (Spotify, Notion, etc.)",
+      "Integrate productivity apps and workflows",
+      "Add API showcase section for real-time data projects"
+    ],
+    "imagePath": "/mockups/6.png",
+    "demoLink": ""
   }
 ]

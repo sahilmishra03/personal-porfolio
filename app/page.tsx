@@ -78,7 +78,7 @@ export const metadata: Metadata = {
 
 const page = () => {
   return (
-    <div className="mx-auto max-w-[720px] px-8 md:px-0">
+    <div className="mx-auto w-full max-w-[720px] overflow-x-hidden px-4 sm:px-6 md:px-0">
       {/* Hero Section */}
       <FadeIn>
         <Hero />

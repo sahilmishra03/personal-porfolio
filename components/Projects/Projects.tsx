@@ -25,7 +25,7 @@ const Projects = () => {
   if (loading) return <LoadingSpinner />;
 
   return (
-    <section id="projects" className="mx-auto mt-12 max-w-3xl px-0 sm:mt-16">
+    <section className="mx-auto mt-12 max-w-3xl px-0 sm:mt-16">
       <div className="mb-6 flex items-end justify-between sm:mb-8">
         <div>
           <h2 className="text-sm font-bold tracking-wider text-neutral-500 uppercase dark:text-neutral-400">
