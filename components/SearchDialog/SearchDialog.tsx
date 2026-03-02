@@ -17,6 +17,7 @@ import {
 
 import projectsData from "@/data/projects.json";
 import { cn } from "@/lib/utils";
+import { ProjectType } from "@/types/project";
 
 const Command = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive>,
@@ -246,7 +247,7 @@ const searchItems: SearchItem[] = [
   },
 
   // Dynamic Projects from JSON
-  ...(projectsData as any[]).map((project) => ({
+  ...(projectsData as ProjectType[]).map((project) => ({
     id: project.id,
     title:
       project.title?.split("–")[0].trim() ||
