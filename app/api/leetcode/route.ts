@@ -34,7 +34,7 @@ export async function GET() {
     }),
     // Lowered to 1 hour (3600 seconds) so stats update more frequently.
     // Change to `cache: "no-store"` if you want real-time updates on every single refresh.
-    next: { revalidate: 3600 }, 
+    next: { revalidate: 3600 },
   });
 
   const data = await res.json();
@@ -68,9 +68,9 @@ export async function GET() {
       currentStreak++;
     } else if (diffInDays > 1) {
       // Streak broken, reset to 1
-      currentStreak = 1; 
+      currentStreak = 1;
     }
-    
+
     maxStreak = Math.max(maxStreak, currentStreak);
   }
 

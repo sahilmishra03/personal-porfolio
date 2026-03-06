@@ -1,10 +1,11 @@
 import React from "react";
+
 import Image from "next/image";
 
 const Intro = () => {
   return (
     <div className="pt-8">
-      <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-neutral-900 dark:text-white">
+      <h1 className="text-xl font-bold tracking-tight text-neutral-900 sm:text-2xl md:text-3xl lg:text-4xl dark:text-white">
         <span className="inline-block">
           Hi, I&apos;m Sahil{" "}
           <span className="text-neutral-500 dark:text-neutral-500">
@@ -62,7 +63,9 @@ const Intro = () => {
         <span className="font-semibold text-neutral-900 dark:text-white">
           Data Structures & Algorithms
         </span>
-        {", I focus on building efficient, real-world solutions with clean architecture and strong backend systems."}
+        {
+          ", I focus on building efficient, real-world solutions with clean architecture and strong backend systems."
+        }
       </p>
     </div>
   );

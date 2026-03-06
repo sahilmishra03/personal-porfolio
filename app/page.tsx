@@ -79,7 +79,7 @@ export const metadata: Metadata = {
 
 const page = () => {
   return (
-    <div className="mx-auto w-full max-w-[720px] overflow-x-hidden px-4 sm:px-6 md:px-0 pt-24">
+    <div className="mx-auto w-full max-w-[720px] overflow-x-hidden px-4 pt-24 sm:px-6 md:px-0">
       {/* Hero Section */}
       <FadeIn>
         <Hero />
@@ -129,7 +129,7 @@ const page = () => {
 
       {/* Visitor Counter & Footer */}
       <FadeIn>
-        <div className="flex flex-col items-center gap-10 pb-12 pt-16">
+        <div className="flex flex-col items-center gap-10 pt-16 pb-12">
           <VisitorCounter />
           <Footer />
         </div>

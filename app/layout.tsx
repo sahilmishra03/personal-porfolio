@@ -75,7 +75,7 @@ export default function RootLayout({
         suppressHydrationWarning={true}
       >
         <ThemeProvider>
-          <div className="min-h-screen flex flex-col">
+          <div className="flex min-h-screen flex-col">
             <NavBar />
             <main className="flex-1">
               <PageTransition>{children}</PageTransition>

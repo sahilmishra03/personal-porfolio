@@ -3,7 +3,10 @@ import { Redis } from "@upstash/redis";
 let redis: Redis | null = null;
 
 // Only initialize Redis if environment variables are present
-if (process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN) {
+if (
+  process.env.UPSTASH_REDIS_REST_URL &&
+  process.env.UPSTASH_REDIS_REST_TOKEN
+) {
   try {
     redis = Redis.fromEnv();
   } catch (error) {
