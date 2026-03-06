@@ -38,7 +38,7 @@ export default function VisitorCounter() {
   };
 
   return (
-    <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-[#111111]/80 px-5 py-2.5 text-sm text-zinc-400 shadow-sm backdrop-blur-md">
+    <div className="flex items-center gap-3 rounded-2xl border border-neutral-200 bg-white/80 px-5 py-2.5 text-sm text-neutral-600 shadow-sm backdrop-blur-md dark:border-white/10 dark:bg-[#111111]/80 dark:text-zinc-400">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="16"
@@ -56,7 +56,7 @@ export default function VisitorCounter() {
       </svg>
       <span>
         You are the{" "}
-        <strong className="font-medium text-zinc-200">
+        <strong className="font-medium text-neutral-800 dark:text-zinc-200">
           {views.toLocaleString()}
           {getOrdinalSuffix(views)}
         </strong>{" "}
