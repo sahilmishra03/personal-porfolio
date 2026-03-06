@@ -69,7 +69,7 @@ const AboutMe = () => {
               Top Skills
             </h4>
 
-            <div className="flex flex-wrap justify-center gap-5 sm:gap-6 md:justify-start">
+            <div className="flex flex-wrap justify-center gap-4 sm:gap-6 md:justify-start">
               {skills.map((skill) => (
                 <div
                   key={skill.alt}
@@ -78,9 +78,9 @@ const AboutMe = () => {
                   <Image
                     src={getSkillIcon(skill)}
                     alt={skill.alt}
-                    width={48}
-                    height={48}
-                    className="h-11 w-11 object-contain drop-shadow-sm transition-transform duration-300 group-hover:scale-110 sm:h-12 sm:w-12"
+                    width={32}
+                    height={32}
+                    className="h-8 w-8 object-contain drop-shadow-sm transition-transform duration-300 group-hover:scale-110 sm:h-12 sm:w-12"
                     unoptimized
                   />
                   {/* Tooltip */}

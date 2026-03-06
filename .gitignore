@@ -43,3 +43,4 @@ CLAUDE.md
 
 # firebase config (template - actual config should be .env.local)
 # lib/firebase.ts
+.env*.local

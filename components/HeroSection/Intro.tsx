@@ -1,23 +1,21 @@
 import React from "react";
-
 import Image from "next/image";
 
 const Intro = () => {
   return (
     <div className="pt-8">
-      <h1 className="text-3xl leading-tight font-bold tracking-tight text-neutral-900 sm:text-4xl md:text-[44px] dark:text-white">
-        {/* Forces it to be one line on screens sm (640px) and up, but lets it wrap naturally on mobile */}
-        <span className="block whitespace-normal sm:inline sm:whitespace-nowrap">
-          Hi, I&apos;m Sahil —{" "}
-        </span>
-        <span className="block whitespace-normal text-neutral-500 sm:inline sm:whitespace-nowrap dark:text-neutral-400">
-          A Full Stack App Developer.
+      <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-neutral-900 dark:text-white">
+        <span className="inline-block">
+          Hi, I&apos;m Sahil{" "}
+          <span className="text-neutral-500 dark:text-neutral-500">
+            — Full Stack App Developer.
+          </span>
         </span>
       </h1>
 
       <p className="mt-6 text-lg leading-relaxed text-neutral-600 sm:text-xl sm:leading-8 dark:text-neutral-400">
         I build scalable, AI-powered applications using{" "}
-        <span className="mx-1 inline-flex items-center gap-1.5 rounded-md border border-neutral-200 bg-neutral-100/50 px-2 py-0.5 text-sm font-medium text-neutral-900 dark:border-neutral-800 dark:bg-neutral-900/50 dark:text-neutral-100">
+        <span className="inline-flex items-center gap-1.5 rounded-md border border-dashed border-neutral-300 bg-neutral-100 px-2 py-0.5 text-sm font-medium text-neutral-900 dark:border-neutral-600 dark:bg-neutral-800 dark:text-white">
           <Image
             src="https://www.vectorlogo.zone/logos/flutterio/flutterio-icon.svg"
             alt="Flutter"
@@ -27,8 +25,8 @@ const Intro = () => {
           />
           Flutter
         </span>
-        ,{" "}
-        <span className="mx-1 inline-flex items-center gap-1.5 rounded-md border border-neutral-200 bg-neutral-100/50 px-2 py-0.5 text-sm font-medium text-neutral-900 dark:border-neutral-800 dark:bg-neutral-900/50 dark:text-neutral-100">
+        {" , "}
+        <span className="inline-flex items-center gap-1.5 rounded-md border border-dashed border-neutral-300 bg-neutral-100 px-2 py-0.5 text-sm font-medium text-neutral-900 dark:border-neutral-600 dark:bg-neutral-800 dark:text-white">
           <Image
             src="https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg"
             alt="Firebase"
@@ -38,8 +36,8 @@ const Intro = () => {
           />
           Firebase
         </span>
-        ,{" "}
-        <span className="mx-1 inline-flex items-center gap-1.5 rounded-md border border-neutral-200 bg-neutral-100/50 px-2 py-0.5 text-sm font-medium text-neutral-900 dark:border-neutral-800 dark:bg-neutral-900/50 dark:text-neutral-100">
+        {" , "}
+        <span className="inline-flex items-center gap-1.5 rounded-md border border-dashed border-neutral-300 bg-neutral-100 px-2 py-0.5 text-sm font-medium text-neutral-900 dark:border-neutral-600 dark:bg-neutral-800 dark:text-white">
           <Image
             src="https://skillicons.dev/icons?i=fastapi&theme=light"
             alt="FastAPI"
@@ -49,8 +47,8 @@ const Intro = () => {
           />
           FastAPI
         </span>
-        , and{" "}
-        <span className="mx-1 inline-flex items-center gap-1.5 rounded-md border border-neutral-200 bg-neutral-100/50 px-2 py-0.5 text-sm font-medium text-neutral-900 dark:border-neutral-800 dark:bg-neutral-900/50 dark:text-neutral-100">
+        {" , and "}
+        <span className="inline-flex items-center gap-1.5 rounded-md border border-dashed border-neutral-300 bg-neutral-100 px-2 py-0.5 text-sm font-medium text-neutral-900 dark:border-neutral-600 dark:bg-neutral-800 dark:text-white">
           <Image
             src="https://skillicons.dev/icons?i=postgresql&theme=light"
             alt="PostgreSQL"
@@ -60,12 +58,11 @@ const Intro = () => {
           />
           PostgreSQL
         </span>
-        . With a strong foundation in{" "}
-        <span className="font-semibold text-neutral-900 dark:text-neutral-200">
+        {". With a strong foundation in "}
+        <span className="font-semibold text-neutral-900 dark:text-white">
           Data Structures & Algorithms
         </span>
-        , I focus on building efficient, real-world solutions with clean
-        architecture and strong backend systems.
+        {", I focus on building efficient, real-world solutions with clean architecture and strong backend systems."}
       </p>
     </div>
   );

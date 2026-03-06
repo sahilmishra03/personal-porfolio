@@ -15,6 +15,7 @@
     "@radix-ui/react-avatar": "^1.1.11",
     "@radix-ui/react-dialog": "^1.1.15",
     "@tailwindcss/postcss": "^4.2.1",
+    "@upstash/redis": "^1.36.3",
     "@vercel/analytics": "^1.6.1",
     "axios": "^1.13.4",
     "clsx": "^2.1.1",

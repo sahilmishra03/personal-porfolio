@@ -79,6 +79,7 @@ body {
   overflow-x: hidden;
   width: 100%;
   overflow-y: auto;
+  position: relative;
 }
 
 /* Hide scrollbars from specific elements */

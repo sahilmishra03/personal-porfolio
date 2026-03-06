@@ -12,6 +12,7 @@ import Hero from "@/components/HeroSection/Hero";
 import ProblemSolving from "@/components/ProblemSolving/ProblemSolving";
 import Projects from "@/components/Projects/Projects";
 import FadeIn from "@/components/ui/FadeIn";
+import VisitorCounter from "@/components/visitorsCount/VisitorCounter";
 
 const baseUrl =
   process.env.NEXT_PUBLIC_SITE_URL || "https://sahilmishra.vercel.app";
@@ -78,7 +79,7 @@ export const metadata: Metadata = {
 
 const page = () => {
   return (
-    <div className="mx-auto w-full max-w-[720px] overflow-x-hidden px-4 sm:px-6 md:px-0">
+    <div className="mx-auto w-full max-w-[720px] overflow-x-hidden px-4 sm:px-6 md:px-0 pt-24">
       {/* Hero Section */}
       <FadeIn>
         <Hero />
@@ -126,12 +127,13 @@ const page = () => {
         <Achievments />
       </FadeIn>
 
-      {/* Footer */}
+      {/* Visitor Counter & Footer */}
       <FadeIn>
-        <Footer />
+        <div className="flex flex-col items-center gap-10 pb-12 pt-16">
+          <VisitorCounter />
+          <Footer />
+        </div>
       </FadeIn>
-
-      <FooterBlur />
     </div>
   );
 };

@@ -15,13 +15,19 @@ const NavBar = () => {
   // Prevent background scrolling when the mobile menu is open
   useEffect(() => {
     if (isMobileMenuOpen) {
-      document.body.style.overflow = "hidden";
+      document.body.style.position = "fixed";
+      document.body.style.width = "100%";
+      document.body.style.top = "0";
     } else {
-      document.body.style.overflow = "auto";
+      document.body.style.position = "";
+      document.body.style.width = "";
+      document.body.style.top = "";
     }
 
     return () => {
-      document.body.style.overflow = "auto";
+      document.body.style.position = "";
+      document.body.style.width = "";
+      document.body.style.top = "";
     };
   }, [isMobileMenuOpen]);
 
@@ -30,7 +36,7 @@ const NavBar = () => {
       {/* RESTORED EXACT ORIGINAL DESKTOP CLASSES */}
       {/* We only conditionally remove the mask-image on mobile WHEN the menu is open to prevent text clashing */}
       <nav
-        className={`from-background bg-background/60 border-border/40 fixed sticky inset-x-0 top-0 z-50 flex h-[80px] items-center justify-between border-b bg-gradient-to-b to-transparent px-8 py-3 backdrop-blur-[5px] transition-colors sm:px-[52px] md:mx-auto md:max-w-[1170px] md:justify-around md:px-0 ${
+        className={`from-background bg-background/60 border-border/40 fixed inset-x-0 top-0 z-50 flex h-[80px] items-center justify-between border-b bg-gradient-to-b to-transparent px-8 py-3 backdrop-blur-[5px] transition-colors sm:px-[52px] md:mx-auto md:max-w-[1170px] md:justify-around md:px-0 ${
           isMobileMenuOpen
             ? "bg-background [mask-image:none] [-webkit-mask-image:none] dark:[mask-image:none] dark:[-webkit-mask-image:none]"
             : "[mask-image:linear-gradient(to_bottom,black_50%,transparent)] [-webkit-mask-image:linear-gradient(to_bottom,black_50%,transparent)] dark:[mask-image:linear-gradient(to_bottom,black_50%,transparent)] dark:[-webkit-mask-image:linear-gradient(to_bottom,black_50%,transparent)]"
