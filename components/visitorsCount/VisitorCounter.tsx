@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 
 export default function VisitorCounter() {
-  const [views, setViews] = useState(0);
+  const [views, setViews] = useState<number | null>(null);
 
   useEffect(() => {
     fetch("/api/visitors")
@@ -16,8 +16,8 @@ export default function VisitorCounter() {
       .then((data) => setViews(data.views))
       .catch((err) => {
         console.error("Error fetching views:", err);
-        // Set a fallback value on error
-        setViews(125);
+        // Set error state instead of fake number
+        setViews(null);
       });
   }, []);
 
@@ -54,12 +54,18 @@ export default function VisitorCounter() {
         <circle cx="12" cy="12" r="3" />
       </svg>
       <span>
-        You are the{" "}
-        <strong className="font-medium text-zinc-200">
-          {views.toLocaleString()}
-          {getOrdinalSuffix(views)}
-        </strong>{" "}
-        visitor
+        {views === null ? (
+          "Loading visitor count..."
+        ) : (
+          <>
+            You are the{" "}
+            <strong className="font-medium text-zinc-200">
+              {views.toLocaleString()}
+              {getOrdinalSuffix(views)}
+            </strong>{" "}
+            visitor
+          </>
+        )}
       </span>
     </div>
   );
