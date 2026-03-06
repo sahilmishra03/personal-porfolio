@@ -5,7 +5,6 @@ import Achievments from "@/components/Achievments/Achievments";
 import CurrentlyLearning from "@/components/CurrentlyLearning/CurrentlyLearning";
 import Experience from "@/components/Experience/Experience";
 import Footer from "@/components/Footer/Footer";
-import FooterBlur from "@/components/Footer/FooterBlur";
 import GitHub from "@/components/GitHub/GitHub";
 import GrowthTimeline from "@/components/GrowthTimeline/GrowthTimeline";
 import Hero from "@/components/HeroSection/Hero";

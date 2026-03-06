@@ -4,10 +4,8 @@ import { useEffect, useState } from "react";
 
 export default function VisitorCounter() {
   const [views, setViews] = useState(0);
-  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
     fetch("/api/visitors")
       .then((res) => {
         if (!res.ok) {
@@ -37,9 +35,6 @@ export default function VisitorCounter() {
         return "th";
     }
   };
-
-  // Prevent hydration mismatch by not rendering until client-side loads
-  if (!mounted) return null;
 
   return (
     <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-[#111111]/80 px-5 py-2.5 text-sm text-zinc-400 shadow-sm backdrop-blur-md">

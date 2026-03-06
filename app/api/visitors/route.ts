@@ -9,7 +9,7 @@ if (
 ) {
   try {
     redis = Redis.fromEnv();
-  } catch (error) {
+  } catch {
     console.warn("Redis initialization failed, using fallback mode");
   }
 }
