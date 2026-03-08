@@ -52,13 +52,6 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <head>
-        <link rel="preload" href="/x.webp" as="image" type="image/webp" />
-        <link
-          rel="preload"
-          href="/linkedin.webp"
-          as="image"
-          type="image/webp"
-        />
         <link
           rel="preload"
           href="/Coding_Profile.jpg"

@@ -11,7 +11,6 @@ import Hero from "@/components/HeroSection/Hero";
 import ProblemSolving from "@/components/ProblemSolving/ProblemSolving";
 import Projects from "@/components/Projects/Projects";
 import FadeIn from "@/components/ui/FadeIn";
-import VisitorCounter from "@/components/visitorsCount/VisitorCounter";
 
 const baseUrl =
   process.env.NEXT_PUBLIC_SITE_URL || "https://sahilmishra.vercel.app";
@@ -122,17 +121,20 @@ const page = () => {
       </FadeIn>
 
       {/* Achievements */}
-      <FadeIn>
-        <Achievments />
-      </FadeIn>
+      <div className="mx-auto w-full max-w-[720px] overflow-x-hidden px-4 sm:px-6 md:px-0">
+        <FadeIn>
+          <Achievments />
+        </FadeIn>
+      </div>
 
-      {/* Visitor Counter & Footer */}
-      <FadeIn>
-        <div className="flex flex-col items-center gap-10 pt-16 pb-12">
-          <VisitorCounter />
-          <Footer />
-        </div>
-      </FadeIn>
+      {/* Footer */}
+      <div className="mx-auto w-full max-w-[720px] overflow-x-hidden px-4 sm:px-6 md:px-0">
+        <FadeIn>
+          <div className="flex flex-col items-center gap-10 pt-16 pb-12">
+            <Footer />
+          </div>
+        </FadeIn>
+      </div>
     </div>
   );
 };

@@ -9,7 +9,7 @@ const skills = [
   { iconId: "flutter", alt: "Flutter" },
   { iconId: "firebase", alt: "Firebase" },
   { iconId: "fastapi", alt: "FastAPI" },
-  { iconId: "postgres", alt: "PostgreSQL" },
+  { iconId: "postgresql", alt: "PostgreSQL" },
   { iconId: "java", alt: "Java" },
   { iconId: "py", alt: "Python" },
 ];
